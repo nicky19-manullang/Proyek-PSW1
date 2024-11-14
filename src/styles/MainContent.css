@@ -1,0 +1,84 @@
+.main-content {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .logo-container {
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    width: 300px;
+    height: auto;
+    border-radius: 50%; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .main-content h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .main-content p {
+    font-size: 18px;
+    color: #555;
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+  
+  .invitation-text {
+    font-size: 20px;
+    font-weight: 500;
+    color: #444;
+    margin: 20px 0;
+    padding: 0 10px;
+  }
+  
+  .cta-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 768px) {
+    .main-content {
+      padding: 30px 15px;
+    }
+  
+    .logo {
+      width: 120px;
+    }
+  
+    .main-content h2 {
+      font-size: 28px;
+    }
+  
+    .main-content p,
+    .invitation-text {
+      font-size: 16px;
+      padding: 0 5px;
+    }
+  
+    .cta-button {
+      padding: 12px 25px;
+      font-size: 16px;
+    }
+  }
+  
