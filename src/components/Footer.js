@@ -10,7 +10,7 @@ function Footer() {
         
         {/* Tautan footer */}
         <div className="footer-links">
-          <a href="#privacy">Privacy Policy</a>
+          <a href="#privacy">Priacy Policy</a>
           <a href="#terms">Terms & Conditions</a>
           <a href="#contact">Contact Us</a>
         </div>
