@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/Header.css'; // Mengimpor CSS khusus header
+import { Link } from 'react-router-dom'; // Import Link dari react-router-dom
+import '../styles/Header.css'; // Pastikan path ini benar
 
 function Header() {
   return (
@@ -10,10 +11,11 @@ function Header() {
       </div>
       <nav>
         <ul>
-          <li><a href="Home">Home</a></li>
-          <li><a href="#courses">Courses</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          {/* Link untuk navigasi ke Home */}
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/vocabulary">Vocabulary</Link></li>
+          <li><Link to="/questions">Soal Latihan</Link></li>
+          <li><Link to="/downloads">Unduh Materi</Link></li>
         </ul>
       </nav>
     </header>

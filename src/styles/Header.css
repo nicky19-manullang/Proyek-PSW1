@@ -1,54 +1,55 @@
+/* Header Styling */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 10px;
-    background-color: #4CAF50;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  background-color: #4CAF50;  
+  color: white;  
+}
+
+.header .logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.hero {
+  width: 70px;  /* Ukuran gambar logo */
+  height: auto;
+  margin-right: 20px;
+}
+
+nav ul {
+  display: flex;
+  list-style-type: none;  
+}
+
+nav ul li {
+  margin-right: 20px;  /* Jarak antar menu */
+}
+
+nav ul li a {
+  color: white; 
+  text-decoration: none;  
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;  /* Menyusun elemen secara vertikal pada layar kecil */
+    align-items: center;  /* Menyusun elemen secara tengah */
   }
-  
-  .header .logo-container {
-    display: flex;
-    align-items: center;
-  }
-  
-  .hero {
-    width: 70px;
-    height: auto;
-    margin-right: 20px;
-  }
-  
+
   nav ul {
-    display: flex;
-    list-style-type: none;
+    flex-direction: column;  /* Menyusun menu secara vertikal */
+    padding: 0;
   }
-  
+
   nav ul li {
-    margin-right: 20px;
+    margin-bottom: 10px;  /* Jarak antar menu dalam tampilan vertikal */
   }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
+
+  .logo-container h1 {
+    font-size: 28px;  /* Ukuran font judul lebih kecil pada layar kecil */
   }
-  
-  @media (max-width: 768px) {
-    .header {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    nav ul {
-      flex-direction: column;
-      padding: 0;
-    }
-  
-    nav ul li {
-      margin-bottom: 10px;
-    }
-  
-    .logo-container h1 {
-      font-size: 28px;
-    }
-  }
-  
+}
