@@ -38,7 +38,7 @@ function Footer() {
         <div className="footer-partners">
           <p>In partnership with:</p>
           <div className="partner-logo">
-            <img src="/images/tutwuri.jpg" alt="SMA N 1 Baktiraja Logo" className="partner-logo-img" />
+            <img src="/images/logoremov.png" alt="SMA N 1 Baktiraja Logo" className="partner-logo-img" />
             <p>SMA N 1 Baktiraja</p>
           </div>
         </div>
