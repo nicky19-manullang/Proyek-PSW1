@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link dari react-router-dom
-import '../styles/Header.css'; // Pastikan path ini benar
+import { Link } from 'react-router-dom';
+import '../styles/Header.css';
 
 function Header() {
   return (
@@ -11,7 +11,6 @@ function Header() {
       </div>
       <nav>
         <ul>
-          {/* Link untuk navigasi ke Home */}
           <li><Link to="/">Home</Link></li>
           <li><Link to="/vocabulary">Vocabulary</Link></li>
           <li><Link to="/questions">Soal Latihan</Link></li>
