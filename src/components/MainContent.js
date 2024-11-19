@@ -1,33 +1,18 @@
-import React, { useState } from 'react';  // Menggunakan useState
-import '../styles/MainContent.css';
+import React from "react";
+import "../styles/MainContent.css";
 
 function MainContent() {
-  // State untuk mengontrol apakah logo ditampilkan
-  const [showLogo, setShowLogo] = useState(false);
-
-  // Fungsi untuk menangani klik tombol
-  const handleGetStarted = () => {
-    setShowLogo(prevState => !prevState);  // Toggle antara true dan false
-  };
-
   return (
-    <main className="main-content">
-      {/* Bagian Selamat Datang */}
-      <div className="intro-section">
-        <h2>Welcome to JOUEnglish</h2>
-        <p>Learn English online with interactive lessons and activities!</p>
-        <button className="cta-button" onClick={handleGetStarted}>
-          {showLogo ? "Hide Logo" : "Get Started"}  {/* Ubah teks tombol sesuai kondisi */}
-        </button>
-      </div>
-
-      {/* Bagian Logo */}
-      {showLogo && (
-        <div className="logo-container">
-          <img src="/images/hero.png" alt="JOUEnglish Logo" className="logo" />
+    <div className="col-12 p-4">
+      <section className="d-flex align-items-center justify-content-between p-5 bg-white">
+        <div className="col-md-6">
+          <h1>Welcome to JOUEnglish</h1>
+          <p>
+          Let's Unlock Your English Potential with JOUEnglish!
+          </p>
         </div>
-      )}
-    </main>
+      </section>
+    </div>
   );
 }
 
