@@ -11,12 +11,13 @@ footer .footer-links {
   margin-top: 10px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* Mengizinkan elemen turun ke baris berikutnya jika ruang tidak cukup */
 }
 
 footer .footer-links a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;
+  margin: 5px 15px; /* Penyesuaian margin agar tetap rapi di layar kecil */
   font-size: 16px;
 }
 
@@ -38,13 +39,14 @@ footer .footer-partners p {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap; /* Responsif untuk logo */
+  gap: 10px; /* Spasi antar elemen */
   margin-top: 10px;
 }
 
 .partner-logo img {
   width: 50px;
   height: 50px;
-  margin-right: 10px;
 }
 
 .partner-logo p {
@@ -57,6 +59,7 @@ footer .footer-members {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap; /* Responsif untuk anggota */
   margin-top: 20px;
 }
 
@@ -87,6 +90,7 @@ footer .footer-contact {
 footer .contact-logos {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* Logo kontak menjadi responsif */
   gap: 20px;
 }
 
@@ -103,19 +107,25 @@ footer .contact-logo {
 
   footer .footer-links {
     flex-direction: column;
-    margin-top: 10px;
+    align-items: center;
   }
 
   footer .footer-links a {
-    margin-bottom: 10px;
+    margin: 5px 0; /* Mengatur spasi antar link */
   }
 
   footer .footer-partners {
     margin-top: 15px;
   }
 
+  footer .partner-logo img {
+    width: 40px;
+    height: 40px;
+  }
+
   footer .footer-members {
     flex-direction: column;
+    align-items: center;
     gap: 15px;
   }
 
@@ -127,5 +137,35 @@ footer .contact-logo {
   footer .contact-logo {
     width: 35px;
     height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    font-size: 12px;
+    padding: 15px;
+  }
+
+  footer .footer-links a {
+    font-size: 14px;
+  }
+
+  footer .footer-motivation {
+    font-size: 16px;
+  }
+
+  footer .partner-logo img {
+    width: 35px;
+    height: 35px;
+  }
+
+  footer .member-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  footer .contact-logo {
+    width: 30px;
+    height: 30px;
   }
 }

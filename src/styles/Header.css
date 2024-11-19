@@ -1,11 +1,13 @@
 /* Header Styling */
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; 
   align-items: center;
   padding: 10px 20px;
-  background:linear-gradient(to right, #4a90e2, #8e44ad); 
+  background: linear-gradient(to right, #4a90e2, #8e44ad);
   color: white;
+  flex-wrap: wrap; /* Agar elemen turun ke bawah jika ruang terbatas */
+  gap: 15px; /* Memberikan jarak antar elemen */
 }
 
 .header .logo-container {
@@ -19,19 +21,71 @@
   margin-right: 20px;
 }
 
+/* Hamburger Menu Button */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.bar.open:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.bar.open:nth-child(2) {
+  opacity: 0;
+}
+
+.bar.open:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Navigasi Menu */
 nav ul {
   display: flex;
   list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 15px;
+}
+
+.nav-menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: linear-gradient(to right, #4a90e2, #8e44ad);
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  gap: 10px;
+}
+
+.nav-menu.active {
+  display: flex;
 }
 
 nav ul li {
-  margin-right: 20px;
+  margin: 0;
+  text-align: center;
 }
 
 nav ul li a {
   color: rgb(0, 0, 0);
   text-decoration: none;
   font-weight: bold;
+  font-size: 16px;
   transition: all 0.3s ease;
 }
 
@@ -40,6 +94,7 @@ nav ul li a:hover {
   transform: scale(1.1);
 }
 
+/* Main Styling */
 main {
   text-align: center;
   padding: 50px 20px;
@@ -58,6 +113,88 @@ main p {
   margin-top: 10px;
 }
 
+/* Responsivitas */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column; 
+    align-items: center;
+    text-align: center;
+    gap: 10px; /* Jarak antar elemen header */
+  }
+
+  .hero {
+    width: 50px;
+    margin: 0 0 10px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px; /* Jarak antar item menu */
+  }
+
+  .nav-menu {
+    display: none;
+    width: 100%;
+    position: static; 
+    flex-direction: column;
+    background: linear-gradient(to right, #4a90e2, #8e44ad);
+    gap: 8px; /* Memberikan jarak antar item menu */
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+
+  main h1 {
+    font-size: 36px;
+  }
+
+  main p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center;
+    gap: 8px; 
+  }
+
+  .hero {
+    width: 40px;
+    margin: 0 0 10px 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 8px; 
+  }
+
+  .nav-menu.active {
+    position: relative;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+
+  main h1 {
+    font-size: 28px;
+  }
+
+  main p {
+    font-size: 14px;
+  }
+}
+
+/* Animasi */
 @keyframes fadeIn {
   from {
     opacity: 0;
