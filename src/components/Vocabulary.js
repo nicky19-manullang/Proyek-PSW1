@@ -59,7 +59,7 @@ function Vocabulary() {
 
   return (
     <section id="vocabulary" className="section vocabulary">
-      <h2>Vocabulary Builder</h2>
+      <h2 className="section-title">Vocabulary Builder</h2>
       <div className="vocab-cards">
         {words.map((item, index) => (
           <div key={index} className="card">
@@ -71,16 +71,10 @@ function Vocabulary() {
               Example: <em>{item.example}</em>
             </p>
             <div className="action-menu">
-              <button
-                className="edit-button"
-                onClick={() => startEditing(index)}
-              >
+              <button className="edit-button" onClick={() => startEditing(index)}>
                 Edit
               </button>
-              <button
-                className="delete-button"
-                onClick={() => handleDeleteWord(index)}
-              >
+              <button className="delete-button" onClick={() => handleDeleteWord(index)}>
                 Delete
               </button>
             </div>
@@ -115,16 +109,10 @@ function Vocabulary() {
             onChange={(e) => setNewWord({ ...newWord, example: e.target.value })}
           />
           <div className="form-actions">
-            <button
-              className="cta-button"
-              onClick={editingIndex === null ? handleAddWord : handleEditWord}
-            >
+            <button className="cta-button" onClick={editingIndex === null ? handleAddWord : handleEditWord}>
               {editingIndex === null ? 'Save Word' : 'Update Word'}
             </button>
-            <button
-              className="cancel-button"
-              onClick={handleCancel}
-            >
+            <button className="cancel-button" onClick={handleCancel}>
               Cancel
             </button>
           </div>

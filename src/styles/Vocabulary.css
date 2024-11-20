@@ -1,76 +1,195 @@
-.add-word-form {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background: #f0f0f0;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .add-word-form input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .add-word-form button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .add-word-form button:hover {
-    background-color: #0056b3;
-  }
-
-  /* Animasi kartu */
-  .card {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-  }
-  
-  .card.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  .delete-button {
-  background-color: #e74c3c;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.9rem;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s ease;
+/* Gaya umum */
+#vocabulary {
+  font-family: 'Roboto', sans-serif;
+  background: #f1f5f8;
+  padding: 50px 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+  max-width: 1200px;
 }
 
-.delete-button:hover {
-  background-color: #c0392b;
+h2.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+  font-weight: 700;
 }
 
-.cancel-button {
-  padding: 10px 15px;
+/* Kartu Vokabulari */
+.vocab-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  width: 280px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card h4 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.card p {
+  color: #555;
   font-size: 1rem;
-  color: #ffffff;
-  background-color: #e74c3c;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.card .action-menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .action-menu button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 8px 15px;
+  font-size: 1rem;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.cancel-button:hover {
+.card .action-menu button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.card .action-menu button.delete-button {
+  background-color: #e74c3c;
+}
+
+.card .action-menu button.delete-button:hover {
+  background-color: #c0392b;
+}
+
+.cta-button {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  background-color: #007bff;
+  color: white;
+  padding: 12px 15px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.add-word-form {
+  margin-top: 30px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.add-word-form input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.add-word-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.add-word-form .form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.add-word-form button {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-word-form button.cta-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.add-word-form button.cta-button:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.add-word-form button.cancel-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+}
+
+.add-word-form button.cancel-button:hover {
   background-color: #c0392b;
   transform: translateY(-2px);
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+  .vocab-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%; 
+    margin-bottom: 20px;
+  }
+
+  .cta-button {
+    width: 100%;
+  }
+
+  .add-word-form {
+    width: 100%;
+  }
+}
+
+/* Responsif untuk perangkat sedang (tablet) */
+@media (max-width: 1024px) {
+  .vocab-cards {
+    gap: 20px;
+  }
+
+  .card {
+    width: 45%; 
+  }
 }
