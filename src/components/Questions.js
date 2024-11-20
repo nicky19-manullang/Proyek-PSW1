@@ -1,79 +1,125 @@
-import React, { useState } from 'react';
-import '../styles/Questions.css';
+import React, { useState } from "react";
+import "../styles/Questions.css";
 
-function Questions() {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [feedback, setFeedback] = useState(null);
+const Questions = () => {
+  const [selectedModule, setSelectedModule] = useState(null);
+  const [isStarted, setIsStarted] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [score, setScore] = useState({ correct: 0, incorrect: 0 });
+  const [showResult, setShowResult] = useState(false);
 
-  const questions = [
+  const modules = [
     {
-      question: "What is the synonym of happy?",
-      options: ['A. Sad', 'B. Angry', 'C. Joyful', 'D. Tired'],
-      correctAnswer: 'C',
+      name: "Word, Phrase, Clause, and Sentence",
+      questions: [
+        { question: "What is meant by clause?", options: ["A. A single word with meaning", "B. A group of words that lacks a subject and a predicate", "C. A group of words that contains a subject and a predicate", "D. A complete sentence that conveys an idea"], answer: 2 },
+        { question: "Which of the following is an example of a phrase", options: ["A. He went to the market.", "B. Having lunch at the restaurant.", "C. When it rains.", "D. Everyone likes it."], answer: 1 },
+      ],
     },
     {
-      question: "What is the antonym of bright?",
-      options: ['A. Dark', 'B. Light', 'C. Dull', 'D. Happy'],
-      correctAnswer: 'A',
-    },
-    {
-      question: "Which word means to enhance?",
-      options: ['A. Destroy', 'B. Improve', 'C. Ignore', 'D. Reduce'],
-      correctAnswer: 'B',
+      name: "Types of sentences.",
+      questions: [
+        { question: "Which of the following sentences is an example of an interrogative sentence?", options: ["A. I love reading books.", "B. What time is the meeting?", "C. Please close the door.", "D. What a beautiful day!"], answer: 1 },
+        { question: "Which type of sentence expresses strong emotion?", options: ["A. Declarative", "B. Interrogative", "C. Imperative", "D. Exclamatory"], answer: 3 },
+      ],
     },
   ];
 
-  const currentQuestion = questions[currentQuestionIndex];
-
-  const handleAnswerClick = (answer) => {
-    setSelectedAnswer(answer);
-    setFeedback(null); // Reset feedback saat memilih jawaban baru
+  const handleModuleSelection = (index) => {
+    setSelectedModule(index);
   };
 
-  const checkAnswer = () => {
-    if (selectedAnswer) {
-      const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
-      setFeedback(isCorrect ? 'Correct! 🎉' : 'Wrong! 😔');
+  const handleStartQuiz = () => {
+    setIsStarted(true);
+  };
+
+  const handleAnswer = (index) => {
+    const currentModule = modules[selectedModule];
+    if (index === currentModule.questions[currentQuestion].answer) {
+      setScore((prev) => ({ ...prev, correct: prev.correct + 1 }));
+    } else {
+      setScore((prev) => ({ ...prev, incorrect: prev.incorrect + 1 }));
+    }
+
+    if (currentQuestion + 1 < currentModule.questions.length) {
+      setCurrentQuestion(currentQuestion + 1);
+    } else {
+      setShowResult(true);
     }
   };
 
-  const nextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedAnswer(null);
-      setFeedback(null);
-    }
+  const restartQuiz = () => {
+    setIsStarted(false);
+    setSelectedModule(null);
+    setCurrentQuestion(0);
+    setScore({ correct: 0, incorrect: 0 });
+    setShowResult(false);
   };
 
   return (
-    <section id="questions" className="section questions">
-      <h2>Soal Latihan</h2>
-      <div className="question">
-        <p>{currentQuestion.question}</p>
-        <ul>
-          {currentQuestion.options.map((option, index) => (
-            <li
-              key={index}
-              onClick={() => handleAnswerClick(option[0])} // Ambil huruf pertama sebagai jawaban
-              className={`option ${selectedAnswer === option[0] ? 'selected' : ''}`}
-            >
-              {option}
-            </li>
-          ))}
-        </ul>
-        <button className="check-answer" onClick={checkAnswer} disabled={!selectedAnswer}>
-          {selectedAnswer ? 'Check Answer' : 'Select an Option'}
-        </button>
-        {feedback && <p className={`feedback ${feedback.includes('Correct') ? 'correct' : 'incorrect'}`}>{feedback}</p>}
-        {feedback && currentQuestionIndex < questions.length - 1 && (
-          <button className="next-question" onClick={nextQuestion}>
-            Next Question
+    <div className="container">
+      {!isStarted && selectedModule === null && (
+        <div className="fade-in">
+          <h1 className="title">Choose a Module</h1>
+          <div className="module-list">
+            {modules.map((module, index) => (
+              <div
+                key={index}
+                className="card"
+                onClick={() => handleModuleSelection(index)}
+              >
+                <h3>{module.name}</h3>
+                <p>Test your knowledge in this module!</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {!isStarted && selectedModule !== null && (
+        <div className="fade-in">
+          <h1 className="title">{modules[selectedModule].name}</h1>
+          <p>Ready to test your knowledge?</p>
+          <button className="quiz-button" onClick={handleStartQuiz}>
+            Let's Start Quiz
           </button>
-        )}
-      </div>
-    </section>
+        </div>
+      )}
+
+      {isStarted && !showResult && (
+        <div className="quiz-container fade-in">
+          <h2 className="quiz-title">
+            Question {currentQuestion + 1} of {modules[selectedModule].questions.length}
+          </h2>
+          <div className="quiz-question">
+            {modules[selectedModule].questions[currentQuestion].question}
+          </div>
+          <div className="quiz-options">
+            {modules[selectedModule].questions[currentQuestion].options.map((option, index) => (
+              <div
+                key={index}
+                className="quiz-option"
+                onClick={() => handleAnswer(index)}
+              >
+                {option}
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {showResult && (
+        <div className="quiz-container fade-in">
+          <h1 className="title">Results</h1>
+          <p className="result">Correct Answers: {score.correct}</p>
+          <p className="result">Incorrect Answers: {score.incorrect}</p>
+          <button className="quiz-button" onClick={restartQuiz}>
+            Restart Quiz
+          </button>
+        </div>
+      )}
+    </div>
   );
-}
+};
 
 export default Questions;
