@@ -6,7 +6,7 @@
   text-align: center;
   background: linear-gradient(to right, #4a90e2, #8e44ad);
   color: white;
-  padding: 1rem; /* Tambahkan padding untuk menghindari konten menempel */
+  padding: 1rem; 
   box-sizing: border-box;
 }
 
@@ -34,11 +34,11 @@
 }
 
 .logo {
-  width: 380px; /* Ukuran default */
+  width: 380px; 
   height: auto;
 }
 
-/* Media query untuk perangkat lebih kecil */
+
 @media (max-width: 1024px) {
   .text-section h1 {
     font-size: 3rem;
