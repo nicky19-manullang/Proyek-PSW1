@@ -9,9 +9,11 @@ function Downloads() {
     ];
 
     const semesterTwoMaterials = [
-        { name: "Advanced Vocabulary", file: "/files/vocab-list-sem2.pdf", type: "PDF", icon: "/images/vocab-icon.png" },
-        { name: "Advanced Grammar Guide", file: "/files/grammar-guide-sem2.pdf", type: "PDF", icon: "/images/grammar-icon.png" },
-        { name: "Advanced Practice Questions", file: "/files/practice-questions-sem2.pdf", type: "PDF", icon: "/images/questions-icon.png" },
+        { name: "Materi Tenses Bahasa Inggris SMA Kelas 11 Semester 2", file: "/files/Modul 6.Materi Tenses Bahasa Inggris SMA Kelas 11 Semester 2", type: "PDF", icon: "/images/tense.jpg" },
+        { name: "Materi Penggunaan Bahasa Inggris Modals SMA Kelas 11 Semester 2", file: "/files/Modul 7. Materi Penggunaan Bahasa Inggris Modals SMA Kelas 11 Semester 2.pdf", type: "PDF", icon: "/images/modals verbs.jpg" },
+        { name: "Materi Keterangan (Adverbs) Bahasa Inggris SMA Kelas 11 Semester 2", file: "/files/Modul 8. Materi Keterangan (Adverbs) Bahasa Inggris SMA Kelas 11 Semester 2.pdf", type: "PDF", icon: "/images/Adverb.jpg" },
+        { name: "Materi Frasa (Phrases) Bahasa Inggris SMA Kelas 11 Semester 2", file: "/files/Modul 9. Materi Frasa (Phrases) Bahasa Inggris SMA Kelas 11 Semester 2.pdf", type: "PDF", icon: "/images/Phrases.jpg" },
+        { name: "Materi Punctuation Bahasa Inggris SMA Kelas 11 Semester 2", file: "/files/Modul 10. Materi Punctuation Bahasa Inggris SMA Kelas 11 Semester 2.pdf", type: "PDF", icon: "/images/Punctuation.jpg" },
     ];
 
     const renderMaterials = (materials) =>
