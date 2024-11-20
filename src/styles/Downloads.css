@@ -1,0 +1,136 @@
+/* Styles for the Downloads Section */
+.downloads {
+  padding: 20px;
+  background-color: #f1f3f5;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.downloads h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.semester {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.semester h3 {
+  font-size: 24px;
+  color: #555;
+  margin-bottom: 15px;
+  text-decoration: underline;
+}
+
+.download-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.download-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.download-item:hover {
+  transform: scale(1.05);
+}
+
+.download-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+  padding: 20px;
+}
+
+.download-icon {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.download-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.file-type {
+  font-size: 14px;
+  font-style: italic;
+  color: #6c757d;
+}
+
+.download-item a:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .downloads h2 {
+    font-size: 24px;
+  }
+
+  .semester h3 {
+    font-size: 20px;
+  }
+
+  .download-cards {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .download-item {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .download-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .download-info {
+    align-items: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .downloads h2 {
+    font-size: 20px;
+  }
+
+  .semester h3 {
+    font-size: 18px;
+  }
+
+  .download-cards {
+    gap: 10px;
+  }
+
+  .download-item {
+    padding: 15px;
+  }
+
+  .download-info span {
+    font-size: 14px;
+  }
+
+  .file-type {
+    font-size: 12px;
+  }
+}

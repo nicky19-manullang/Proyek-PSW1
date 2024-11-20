@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles/Vocabulary.css';
 
 function Vocabulary() {
-  // Daftar kata (state untuk data dinamis)
+  // Daftar kata
   const [words, setWords] = useState([
     { word: 'Resilient', definition: 'Able to recover quickly from difficulties.', example: 'She is very resilient in facing challenges.' },
     { word: 'Innovative', definition: 'Introducing new ideas; creative.', example: 'The team came up with an innovative solution.' },
@@ -17,7 +17,7 @@ function Vocabulary() {
     cards.forEach((card, index) => {
       setTimeout(() => {
         card.classList.add('show');
-      }, index * 200); // Jedanya 200ms per kartu
+      }, index * 200); 
     });
   }, [words]);
 
