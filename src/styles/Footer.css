@@ -4,59 +4,79 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
+  font-family: 'Arial', sans-serif;
 }
 
-/* Styling untuk link-footer */
+/* Bagian atas footer */
+footer .footer-top {
+  margin-bottom: 15px;
+}
+
+footer .footer-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+footer .footer-subtitle {
+  font-size: 14px;
+  color: #d1e7ff;
+}
+
+/* Styling untuk link footer */
 footer .footer-links {
   margin-top: 10px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
-footer .footer-links a {
+footer .footer-links button {
+  background: none;
   color: white;
-  text-decoration: none;
-  margin: 0 15px;
+  border: 1px solid white;
+  padding: 10px 15px;
+  margin: 5px 15px;
   font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-footer .footer-links a:hover {
-  text-decoration: underline;
+footer .footer-links button:hover {
+  background-color: white;
+  color: #0a3362;
 }
 
 /* Styling untuk bagian kerja sama dengan SMA N 1 Baktiraja */
-footer .footer-partners {
+footer .footer-bottom {
   margin-top: 20px;
 }
 
-footer .footer-partners p {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.partner-logo {
+footer .partner-logo {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-top: 10px;
 }
 
-.partner-logo img {
+footer .partner-logo img {
   width: 50px;
   height: 50px;
-  margin-right: 10px;
 }
 
-.partner-logo p {
+footer .partner-logo p {
   font-size: 16px;
   margin: 0;
 }
 
-/* Bagian Anggota Kelompok */
-footer .footer-members {
+/* Bagian anggota kelompok */
+footer .members-list {
   display: flex;
   justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
   margin-top: 20px;
 }
 
@@ -70,62 +90,37 @@ footer .member-img {
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 10px;
+  border: 2px solid white;
 }
 
-/* Bagian Motivasi */
-footer .footer-motivation {
-  margin-top: 20px;
-  font-size: 18px;
-  font-style: italic;
-}
-
-/* Bagian Kontak */
-footer .footer-contact {
-  margin-top: 20px;
-}
-
-footer .contact-logos {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-footer .contact-logo {
-  width: 40px;
-  height: 40px;
-}
-
-/* Responsif untuk layar kecil */
+/* Responsif */
 @media (max-width: 768px) {
-  footer {
-    font-size: 14px;
+  footer .footer-links button {
+    margin: 5px 0;
   }
 
-  footer .footer-links {
-    flex-direction: column;
-    margin-top: 10px;
-  }
-
-  footer .footer-links a {
-    margin-bottom: 10px;
-  }
-
-  footer .footer-partners {
-    margin-top: 15px;
-  }
-
-  footer .footer-members {
-    flex-direction: column;
-    gap: 15px;
+  footer .partner-logo img {
+    width: 40px;
+    height: 40px;
   }
 
   footer .member-img {
     width: 80px;
     height: 80px;
   }
+}
 
-  footer .contact-logo {
-    width: 35px;
-    height: 35px;
+@media (max-width: 480px) {
+  footer .footer-title {
+    font-size: 16px;
+  }
+
+  footer .footer-subtitle {
+    font-size: 12px;
+  }
+
+  footer .member-img {
+    width: 60px;
+    height: 60px;
   }
 }
