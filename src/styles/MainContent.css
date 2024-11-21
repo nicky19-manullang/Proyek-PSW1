@@ -106,74 +106,74 @@
   background-color: #ddd;
 }
 
-/* Media Queries untuk Responsivitas */
-@media (max-width: 1200px) {
-  .logo {
-    width: 250px;
-  }
+/* Learning Classes */
+.learning-classes-container {
+  margin-top: 2rem;
+  width: 100%;
+}
 
-  .text-section h1 {
-    font-size: 3rem;
-  }
+.learning-classes-container h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333333;
+  text-shadow: 1px 3px 6px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 2s ease;
+}
 
-  .text-section p {
-    font-size: 1.1rem;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-
-  .schedule-table {
-    font-size: 1rem;
+  to {
+    opacity: 1;
   }
 }
 
-@media (max-width: 768px) {
-  .text-section h1 {
-    font-size: 2.5rem;
-  }
-
-  .text-section p {
-    font-size: 1rem;
-  }
-
-  .schedule-table {
-    font-size: 0.9rem;
-  }
-
-  .logo-container {
-    margin-top: 2.5rem;
-  }
-
-  .advertisement-video {
-    max-width: 100%;
-  }
-
-  .schedule-container {
-    margin-top: 2rem;
-  }
+/* Container Card */
+.class-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-@media (max-width: 480px) {
-  .main-content {
-    padding: 1rem;
-  }
+/* Desain Card */
+.class-card {
+  background: #f9f9f9;
+  color: #333333;
+  border-radius: 15px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  cursor: pointer;
+  padding: 2rem 1.5rem;
+}
 
-  .text-section h1 {
-    font-size: 2rem;
-  }
+.class-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  background: #ffffff;
+}
 
-  .text-section p {
-    font-size: 0.9rem;
-  }
+.class-card h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #4a90e2;
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
 
-  .logo {
-    width: 200px;
-  }
+.class-card p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #777777;
+  transition: color 0.3s ease;
+}
 
-  .schedule-table th,
-  .schedule-table td {
-    padding: 8px;
-  }
-
-  .schedule-table {
-    font-size: 0.9rem;
-  }
+.class-card:hover p {
+  color: #4a90e2;
 }

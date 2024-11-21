@@ -6,6 +6,8 @@ function Downloads() {
         { name: "Vocabulary List", file: "/files/vocabulary-list.pdf", type: "PDF", icon: "/images/vocabul.jpg" },
         { name: "Grammar Guide", file: "/files/grammar-guide-sem1.pdf", type: "PDF", icon: "/images/grammar-icon.png" },
         { name: "Practice Questions", file: "/files/practice-questions-sem1.pdf", type: "PDF", icon: "/images/questions-icon.png" },
+        { name: "Practice Questions", file: "/files/practice-questions-sem1.pdf", type: "PDF", icon: "/images/questions-icon.png" },
+        { name: "Practice Questions", file: "/files/practice-questions-sem1.pdf", type: "PDF", icon: "/images/questions-icon.png" },
     ];
 
     const semesterTwoMaterials = [

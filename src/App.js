@@ -15,6 +15,16 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<MainContent />} />
+          
+          {/* Routing untuk materi pembelajaran */}
+          <Route path="/can-could" element={<CanCould />} />
+          <Route path="/opinion" element={<Opinion />} />
+          <Route path="/future-perfect" element={<FuturePerfect />} />
+          <Route path="/personal-letter" element={<PersonalLetter />} />
+          <Route path="/exposition" element={<Exposition />} />
+          <Route path="/formal-letter" element={<FormalLetter />} />
+          
+          {/* Routing untuk halaman tambahan */}
           <Route path="/vocabulary" element={<Vocabulary />} />
           <Route path="/questions" element={<Questions />} />
           <Route path="/downloads" element={<Downloads />} />
