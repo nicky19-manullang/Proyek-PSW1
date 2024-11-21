@@ -3,124 +3,146 @@ footer {
   background-color: #0a3362;
   color: white;
   text-align: center;
-  padding: 20px;
+  padding: 30px;
   font-family: 'Arial', sans-serif;
+  position: relative;
+  z-index: 10;
 }
 
 /* Bagian atas footer */
 footer .footer-top {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 footer .footer-title {
-  font-size: 20px;
+  font-size: 28px;
   font-weight: bold;
+  color: #fff;
+  margin-bottom: 5px;
 }
 
 footer .footer-subtitle {
-  font-size: 14px;
+  font-size: 16px;
   color: #d1e7ff;
+  margin-bottom: 20px;
 }
 
-/* Styling untuk link footer */
+/* Tautan footer */
 footer .footer-links {
-  margin-top: 10px;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 20px;
 }
 
-footer .footer-links button {
-  background: none;
-  color: white;
-  border: 1px solid white;
-  padding: 10px 15px;
-  margin: 5px 15px;
+footer .footer-link {
+  text-decoration: none;
+  color: #d1e7ff;
   font-size: 16px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 500;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-footer .footer-links button:hover {
-  background-color: white;
-  color: #0a3362;
+footer .footer-link:hover {
+  color: #ffcc00;
+  transform: translateY(-5px);
 }
 
-/* Styling untuk bagian kerja sama dengan SMA N 1 Baktiraja */
-footer .footer-bottom {
-  margin-top: 20px;
-}
-
-footer .partner-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-footer .partner-logo img {
-  width: 50px;
-  height: 50px;
-}
-
-footer .partner-logo p {
-  font-size: 16px;
-  margin: 0;
-}
-
-/* Bagian anggota kelompok */
-footer .members-list {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-
-footer .member {
+/* Deskripsi footer */
+footer .footer-description {
+  font-size: 14px;
+  color: #b0c4de;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
   text-align: center;
 }
 
-footer .member-img {
-  width: 100px;
-  height: 100px;
+/* Bagian kerja sama */
+footer .footer-bottom {
+  margin-top: 30px;
+  border-top: 1px solid #333;
+  padding-top: 20px;
+}
+
+footer .footer-bottom p {
+  font-size: 14px;
+  color: #b0c4de;
+}
+
+/* Social Media Links */
+footer .social-media-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+footer .social-link {
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+footer .social-logo {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-  border: 2px solid white;
+  background-color: #fff;
+  padding: 8px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+footer .social-logo:hover {
+  transform: scale(1.2);
+  background-color: #ffcc00;
+}
+
+footer .social-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
 /* Responsif */
 @media (max-width: 768px) {
-  footer .footer-links button {
-    margin: 5px 0;
+  footer .footer-links {
+    flex-direction: column;
+    gap: 15px;
   }
 
-  footer .partner-logo img {
-    width: 40px;
-    height: 40px;
+  footer .footer-description {
+    font-size: 13px;
   }
 
-  footer .member-img {
-    width: 80px;
-    height: 80px;
+  footer .footer-title {
+    font-size: 24px;
+  }
+
+  footer .footer-subtitle {
+    font-size: 14px;
+  }
+
+  footer .social-logo {
+    width: 35px;
+    height: 35px;
   }
 }
 
 @media (max-width: 480px) {
   footer .footer-title {
-    font-size: 16px;
+    font-size: 20px;
   }
 
   footer .footer-subtitle {
     font-size: 12px;
   }
 
-  footer .member-img {
-    width: 60px;
-    height: 60px;
+  footer .social-logo {
+    width: 30px;
+    height: 30px;
   }
 }

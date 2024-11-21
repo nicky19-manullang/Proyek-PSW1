@@ -5,38 +5,10 @@ import "../styles/MainContent.css";
 function MainContent() {
   const navigate = useNavigate();
 
-  const learningClasses = [
-    {
-      title: "Can and Could",
-      description: "Pelajari modal verbs 'can' dan 'could' untuk menunjukkan kemampuan.",
-      route: "/can-could",
-    },
-    {
-      title: "Asking and Giving Opinion",
-      description: "Belajar bertanya dan memberikan pendapat.",
-      route: "/opinion",
-    },
-    {
-      title: "Future Perfect Tense",
-      description: "Pelajari struktur dan penggunaan future perfect tense.",
-      route: "/future-perfect",
-    },
-    {
-      title: "Personal Letter",
-      description: "Belajar menulis surat pribadi.",
-      route: "/personal-letter",
-    },
-    {
-      title: "Analytical Exposition",
-      description: "Pelajari cara menyusun teks analitis.",
-      route: "/exposition",
-    },
-    {
-      title: "Formal Letter",
-      description: "Belajar menulis surat resmi.",
-      route: "/formal-letter",
-    },
-  ];
+  // Fungsi untuk menavigasi ke halaman Materi
+  const goToMateriPage = () => {
+    navigate("/materi"); // Mengarahkan ke halaman Materi
+  };
 
   return (
     <main className="main-content">
@@ -50,20 +22,61 @@ function MainContent() {
         </div>
       </div>
 
-      <div className="learning-classes-container">
-        <h2>Learning Materials</h2>
-        <div className="class-cards">
-          {learningClasses.map((learningClass, index) => (
-            <div
-              key={index}
-              className="class-card"
-              onClick={() => navigate(learningClass.route)}
-            >
-              <h3>{learningClass.title}</h3>
-              <p>{learningClass.description}</p>
-            </div>
-          ))}
-        </div>
+      {/* Iklan Video Singkat */}
+      <div className="advertisement-container">
+        <h2>Watch Our Introduction Video</h2>
+        <video className="advertisement-video" controls autoPlay>
+          <source src="/images/bing.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      {/* Jadwal Belajar */}
+      <div className="schedule-container">
+        <h2>Jadwal Belajar</h2>
+        <table className="schedule-table">
+          <thead>
+            <tr>
+              <th>Hari</th>
+              <th>Materi</th>
+              <th>Jam</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Senin</td>
+              <td>Can and Could</td>
+              <td>10:00 - 11:00</td>
+            </tr>
+            <tr>
+              <td>Selasa</td>
+              <td>Asking and Giving Opinion</td>
+              <td>10:00 - 11:00</td>
+            </tr>
+            <tr>
+              <td>Rabu</td>
+              <td>Future Perfect Tense</td>
+              <td>10:00 - 11:00</td>
+            </tr>
+            <tr>
+              <td>Kamis</td>
+              <td>Personal Letter</td>
+              <td>10:00 - 11:00</td>
+            </tr>
+            <tr>
+              <td>Jumat</td>
+              <td>Analytical Exposition</td>
+              <td>10:00 - 11:00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      {/* Tombol untuk mengarahkan ke halaman Materi */}
+      <div className="cta-container">
+        <button className="cta-button" onClick={goToMateriPage}>
+          Go to Materi
+        </button>
       </div>
     </main>
   );

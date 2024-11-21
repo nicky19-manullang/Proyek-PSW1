@@ -1,33 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 /* Gaya Utama untuk Main Content */
 .main-content {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  min-height: calc(100vh - 100px); /* Memberikan ruang untuk footer */
+  min-height: calc(100vh - 100px);
   text-align: center;
-  background: linear-gradient(135deg, #4a90e2, #8e44ad, #6a3093);
-  background-size: 300% 300%;
-  animation: gradientAnimation 10s ease infinite;
-  color: white;
+  background: #ffffff;
   padding: 2rem;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  color: #333333;
 }
 
-/* Efek animasi background */
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Bagian Header */
+/* Header dan Section Teks */
 .content-wrapper {
   display: flex;
   flex-direction: column;
@@ -36,120 +24,104 @@
 }
 
 .text-section h1 {
-  font-size: 4rem;
-  font-weight: bold;
+  font-size: 3.5rem;
+  font-weight: 700;
   margin: 0;
-  color: #17f092;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: #4a90e2;
+  text-shadow: 0 4px 10px rgba(74, 144, 226, 0.2);
 }
 
 .text-section p {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin: 0.5rem 0 2rem;
-  color: #d7f806;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  color: #555555;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo */
 .logo-container {
-  margin-top: 1.5rem;
+  margin-top: 3.5rem;
 }
 
 .logo {
-  width: 380px;
+  width: 300px;
   height: auto;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
-  transition: transform 0.3s ease;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .logo:hover {
   transform: scale(1.05);
+  filter: drop-shadow(0 6px 15px rgba(0, 0, 0, 0.3));
 }
 
-/* Bagian Kelas Pembelajaran */
-.learning-classes-container {
-  margin-top: 2rem;
-  width: 100%;
-}
-
-.learning-classes-container h2 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: white;
-  text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.6);
-  animation: fadeIn 2s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Container Card */
-.class-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Desain Card */
-.class-card {
-  background: white;
-  color: #333;
-  border-radius: 15px;
-  padding: 20px;
+/* Iklan Video Singkat */
+.advertisement-container {
+  margin-top: 3rem;
   text-align: center;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
 }
 
-.class-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-  background: #f9f9f9;
+.advertisement-video {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.class-card h3 {
-  font-size: 1.7rem;
-  color: #4a90e2;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+/* Jadwal Belajar */
+.schedule-container {
+  margin-top: 3rem;
+  width: 100%;
+  text-align: center;
 }
 
-.class-card p {
-  font-size: 1rem;
-  color: #7f8c8d;
-  line-height: 1.5;
+.schedule-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-size: 1.1rem;
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.schedule-table th {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.schedule-table td {
+  background-color: #f9f9f9;
+}
+
+.schedule-table tr:nth-child(even) td {
+  background-color: #e8e8e8;
+}
+
+.schedule-table td:hover {
+  background-color: #ddd;
 }
 
 /* Media Queries untuk Responsivitas */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+  .logo {
+    width: 250px;
+  }
+
   .text-section h1 {
     font-size: 3rem;
   }
 
   .text-section p {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
-  .logo {
-    width: 300px;
-  }
-
-  .class-card h3 {
-    font-size: 1.5rem;
-  }
-
-  .class-card p {
-    font-size: 0.9rem;
+  .schedule-table {
+    font-size: 1rem;
   }
 }
 
@@ -162,41 +134,46 @@
     font-size: 1rem;
   }
 
-  .logo {
-    width: 250px;
+  .schedule-table {
+    font-size: 0.9rem;
   }
 
-  .class-cards {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  .logo-container {
+    margin-top: 2.5rem;
   }
 
-  .class-card h3 {
-    font-size: 1.3rem;
+  .advertisement-video {
+    max-width: 100%;
   }
 
-  .class-card p {
-    font-size: 0.85rem;
+  .schedule-container {
+    margin-top: 2rem;
   }
 }
 
 @media (max-width: 480px) {
+  .main-content {
+    padding: 1rem;
+  }
+
   .text-section h1 {
     font-size: 2rem;
   }
 
   .text-section p {
-    font-size: 0.875rem;
+    font-size: 0.9rem;
   }
 
   .logo {
     width: 200px;
   }
 
-  .class-card h3 {
-    font-size: 1rem;
+  .schedule-table th,
+  .schedule-table td {
+    padding: 8px;
   }
 
-  .class-card p {
-    font-size: 0.75rem;
+  .schedule-table {
+    font-size: 0.9rem;
   }
 }
