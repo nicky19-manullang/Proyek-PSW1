@@ -2,85 +2,104 @@ import React, { useState } from 'react';
 import '../styles/Footer.css';
 
 function Footer() {
-  // State untuk mengontrol visibilitas bagian Anggota Kelompok, Motivasi, dan Kontak
-  const [showMembers, setShowMembers] = useState(false);
-  const [showMotivation, setShowMotivation] = useState(false);
-  const [showContact, setShowContact] = useState(false);
+  const [showSection, setShowSection] = useState({
+    members: false,
+    motivation: false,
+    contact: false,
+  });
 
-  // Toggle untuk menampilkan anggota kelompok
-  const toggleMembers = () => {
-    setShowMembers(!showMembers);
-  };
+  // Daftar anggota kelompok
+  const teamMembers = [
+    { name: 'Nicky Manullang', image: 'member1.jpg' },
+    { name: 'Angie Sitorus', image: 'member2.jpg' },
+    { name: 'Yoel Hutabarat', image: 'member3.jpg' },
+  ];
 
-  // Toggle untuk menampilkan motivasi
-  const toggleMotivation = () => {
-    setShowMotivation(!showMotivation);
-  };
-
-  // Toggle untuk menampilkan kontak
-  const toggleContact = () => {
-    setShowContact(!showContact);
+  const toggleSection = (section) => {
+    setShowSection((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
   };
 
   return (
     <footer className="footer">
-      <div className="footer-content">
-        <p>&copy; 2024 JOUEnglish. All rights reserved.</p>
-
-        {/* Tautan footer */}
-        <div className="footer-links">
-          <a href="#members" onClick={toggleMembers}>Anggota Kelompok</a>
-          <a href="#motivation" onClick={toggleMotivation}>Motivasi</a>
-          <a href="#contact" onClick={toggleContact}>Kontak</a>
+      <div className="footer-container">
+        {/* Bagian atas footer */}
+        <div className="footer-top">
+          <p className="footer-title">© 2024 JOUEnglish</p>
+          <p className="footer-subtitle">All rights reserved</p>
         </div>
 
-        {/* Bagian Jalinan Kerja Sama */}
-        <div className="footer-partners">
+        {/* Tautan untuk navigasi */}
+        <div className="footer-links">
+          <button onClick={() => toggleSection('members')}>Anggota Kelompok</button>
+          <button onClick={() => toggleSection('motivation')}>Motivasi</button>
+          <button onClick={() => toggleSection('contact')}>Kontak</button>
+        </div>
+
+        {/* Bagian anggota kelompok */}
+        {showSection.members && (
+          <div className="footer-section">
+            <h4>Anggota Kelompok</h4>
+            <div className="members-list">
+              {teamMembers.map((member, idx) => (
+                <div key={idx} className="member">
+                  <img
+                    src={`/images/${member.image}`}
+                    alt={`Foto ${member.name}`}
+                    className="member-img"
+                  />
+                  <p>{member.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Bagian motivasi */}
+        {showSection.motivation && (
+          <div className="footer-section">
+            <h4>Motivasi</h4>
+            <p>✨ "Belajar Bahasa Inggris adalah langkah pertama menuju kesuksesan." ✨</p>
+          </div>
+        )}
+
+        {/* Bagian kontak */}
+        {showSection.contact && (
+          <div className="footer-section">
+            <h4>Kontak Kami</h4>
+            <div className="contact-links">
+              <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/images/whatsapp-logo.png"
+                  alt="WhatsApp"
+                  className="contact-logo"
+                />
+              </a>
+              <a href="https://instagram.com/yourinstagram" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="/images/instagram-logo.png"
+                  alt="Instagram"
+                  className="contact-logo"
+                />
+              </a>
+            </div>
+          </div>
+        )}
+
+        {/* Bagian kerja sama */}
+        <div className="footer-bottom">
           <p>In partnership with:</p>
           <div className="partner-logo">
-            <img src="/images/logoremov.png" alt="SMA N 1 Baktiraja Logo" className="partner-logo-img" />
+            <img
+              src="/images/logoremov.png"
+              alt="SMA N 1 Baktiraja Logo"
+              className="partner-logo-img"
+            />
             <p>SMA N 1 Baktiraja</p>
           </div>
         </div>
-
-        {/* Bagian Anggota Kelompok */}
-        {showMembers && (
-          <div className="footer-members">
-            <div className="member">
-              <img src="/images/member1.jpg" alt="Anggota 1" className="member-img" />
-              <p>Anggota 1</p>
-            </div>
-            <div className="member">
-              <img src="/images/member2.jpg" alt="Anggota 2" className="member-img" />
-              <p>Anggota 2</p>
-            </div>
-            <div className="member">
-              <img src="/images/member3.jpg" alt="Anggota 3" className="member-img" />
-              <p>Anggota 3</p>
-            </div>
-          </div>
-        )}
-
-        {/* Bagian Motivasi */}
-        {showMotivation && (
-          <div className="footer-motivation">
-            <p>"Belajar Bahasa Inggris adalah langkah pertama menuju kesuksesan."</p>
-          </div>
-        )}
-
-        {/* Bagian Kontak */}
-        {showContact && (
-          <div className="footer-contact">
-            <div className="contact-logos">
-              <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer">
-                <img src="/images/whatsapp-logo.png" alt="WhatsApp" className="contact-logo" />
-              </a>
-              <a href="https://instagram.com/yourinstagram" target="_blank" rel="noopener noreferrer">
-                <img src="/images/instagram-logo.png" alt="Instagram" className="contact-logo" />
-              </a>
-            </div>
-          </div>
-        )}
       </div>
     </footer>
   );
