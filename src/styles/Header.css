@@ -3,11 +3,12 @@
   display: flex;
   justify-content: space-between; 
   align-items: center;
-  padding: 10px 20px;
-  background: linear-gradient(to right, #4a90e2, #8e44ad);
+  padding: 15px 25px;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
   color: white;
-  flex-wrap: wrap; /* Agar elemen turun ke bawah jika ruang terbatas */
-  gap: 15px; /* Memberikan jarak antar elemen */
+  flex-wrap: wrap; 
+  gap: 15px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .header .logo-container {
@@ -19,6 +20,8 @@
   width: 70px;
   height: auto;
   margin-right: 20px;
+  border-radius: 50%; /* Menambah sedikit sentuhan lembut */
+  border: 3px solid white;
 }
 
 /* Hamburger Menu Button */
@@ -35,6 +38,7 @@
   width: 100%;
   height: 3px;
   background-color: white;
+  border-radius: 5px;
   transition: all 0.3s ease;
 }
 
@@ -62,12 +66,12 @@ nav ul {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: 34px;
+  top: 40px;
   right: 20px;
-  background: linear-gradient(to right, #4a90e2, #8e44ad);
-  padding: 20px;
-  border-radius: 100px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
   gap: 10px;
 }
 
@@ -81,7 +85,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: rgb(0, 0, 0);
+  color: #f5f5f5;
   text-decoration: none;
   font-weight: bold;
   font-size: 18px;
@@ -90,6 +94,7 @@ nav ul li a {
 
 nav ul li a:hover {
   color: #FFD700;
+  text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8);
   transform: scale(1.1);
 }
 
@@ -97,19 +102,24 @@ nav ul li a:hover {
 main {
   text-align: center;
   padding: 50px 20px;
-  background: linear-gradient(120deg, #A1C4FD, #C2E9FB);
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
   color: #333;
+  border-top: 5px solid #2575fc;
+  border-bottom: 5px solid #6a11cb;
 }
 
 main h1 {
   font-size: 48px;
   font-weight: bold;
   animation: fadeIn 1.5s ease;
+  color: #2575fc;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 main p {
   font-size: 18px;
   margin-top: 10px;
+  color: #444;
 }
 
 /* Responsivitas */
@@ -118,7 +128,7 @@ main p {
     flex-direction: column; 
     align-items: center;
     text-align: center;
-    gap: 10px; /* Jarak antar elemen header */
+    gap: 10px;
   }
 
   .hero {
@@ -126,14 +136,10 @@ main p {
     margin: 0 0 10px 0;
   }
 
-  .hamburger {
-    display: flex;
-  }
-
   nav ul {
     flex-direction: column;
     margin-top: 10px;
-    gap: 10px; /* Jarak antar item menu */
+    gap: 10px;
   }
 
   .nav-menu {
@@ -141,8 +147,8 @@ main p {
     width: 100%;
     position: static; 
     flex-direction: column;
-    background: linear-gradient(to right, #4a90e2, #8e44ad);
-    gap: 8px; /* Memberikan jarak antar item menu */
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    gap: 8px;
   }
 
   nav ul li a {
@@ -163,7 +169,7 @@ main p {
     flex-direction: column; 
     align-items: center; 
     text-align: center;
-    gap: 8px; 
+    gap: 8px;
   }
 
   .hero {
@@ -173,7 +179,7 @@ main p {
 
   nav ul {
     flex-direction: column;
-    gap: 8px; 
+    gap: 8px;
   }
 
   .nav-menu.active {
