@@ -1,22 +1,127 @@
-.materi {
-    text-align: center;
-    padding: 20px;
-    font-family: 'Poppins', sans-serif;
+/* Umum */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f9f9f9;
+  color: #555;
+  margin: 0;
+  padding: 0;
+}
+
+h2, h3 {
+  color: #333;
+  font-weight: 600;
+}
+
+.materi-page {
+  padding: 20px;
+}
+
+.materi-intro {
+  font-size: 18px;
+  color: #777;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Bagian Semester */
+.semester-section {
+  margin-bottom: 50px;
+}
+
+.semester-section h3 {
+  font-size: 22px;
+  color: #4a90e2;
+  text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px dashed #ffd166;
+  padding-bottom: 5px;
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Kontainer Materi */
+.materi-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Kartu Materi */
+.materi-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 280px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border: 2px solid #ffd166;
+}
+
+.materi-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+}
+
+.materi-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 2px solid #ffd166;
+}
+
+/* Konten Materi */
+.materi-content {
+  padding: 15px;
+}
+
+.materi-content h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #4a90e2;
+}
+
+.materi-content ul {
+  list-style-type: disc;
+  text-align: left;
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.materi-content ul li {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+/* Tombol Materi */
+.materi-button {
+  background: #ffd166;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+
+.materi-button:hover {
+  background: #f4a261;
+}
+
+/* Responsif */
+@media screen and (max-width: 768px) {
+  .materi-container {
+    flex-direction: column;
+    align-items: center;
   }
-  
-  .materi h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+
+  .materi-card {
+    width: 90%;
   }
-  
-  .materi ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .materi li {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: #333;
-  }
-  
+}
