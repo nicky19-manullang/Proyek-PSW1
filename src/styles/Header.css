@@ -7,7 +7,7 @@
   background: linear-gradient(to right, #6a11cb, #2575fc);
   color: white;
   flex-wrap: wrap; 
-  gap: 15px; 
+  gap: 10px; 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
@@ -20,7 +20,7 @@
   width: 70px;
   height: auto;
   margin-right: 20px;
-  border-radius: 50%; /* Menambah sedikit sentuhan lembut */
+  border-radius: 50%; 
   border: 3px solid white;
 }
 
