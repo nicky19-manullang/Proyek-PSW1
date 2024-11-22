@@ -1,78 +1,53 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Questions.css';
 
 function Questions() {
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const [feedback, setFeedback] = useState(null);
+  const navigate = useNavigate();
 
-  const questions = [
+  const topics = [
     {
-      question: "What is the synonym of happy?",
-      options: ['A. Sad', 'B. Angry', 'C. Joyful', 'D. Tired'],
-      correctAnswer: 'C',
+      id: 1,
+      image: 'https://i.pinimg.com/736x/c8/fb/ea/c8fbead950fcef89535966b329a21124.jpg',
+      title: 'Sentence Structure',
+      route: '/quis1', // Rute untuk halaman quis1
     },
     {
-      question: "What is the antonym of bright?",
-      options: ['A. Dark', 'B. Light', 'C. Dull', 'D. Happy'],
-      correctAnswer: 'A',
+      id: 2,
+      image: 'https://i.pinimg.com/736x/c8/fb/ea/c8fbead950fcef89535966b329a21124.jpg',
+      title: 'Type of Sentence',
+      route: '/quis2', // Rute untuk halaman quis2
     },
     {
-      question: "Which word means to enhance?",
-      options: ['A. Destroy', 'B. Improve', 'C. Ignore', 'D. Reduce'],
-      correctAnswer: 'B',
+      id: 3,
+      image: 'https://i.pinimg.com/736x/c8/fb/ea/c8fbead950fcef89535966b329a21124.jpg',
+      title: 'Classification of Sentences',
+      route: '/quis3', // Rute untuk halaman quis3
     },
   ];
 
-  const currentQuestion = questions[currentQuestionIndex];
-
-  const handleAnswerClick = (answer) => {
-    setSelectedAnswer(answer);
-    setFeedback(null); // Reset feedback saat memilih jawaban baru
-  };
-
-  const checkAnswer = () => {
-    if (selectedAnswer) {
-      const isCorrect = selectedAnswer === currentQuestion.correctAnswer;
-      setFeedback(isCorrect ? 'Correct! 🎉' : 'Wrong! 😔');
-    }
-  };
-
-  const nextQuestion = () => {
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedAnswer(null);
-      setFeedback(null);
-    }
+  const handleButtonClick = (route) => {
+    navigate(route); 
   };
 
   return (
-    <section id="questions" className="section questions">
-      <h2>Soal Latihan</h2>
-      <div className="question">
-        <p>{currentQuestion.question}</p>
-        <ul>
-          {currentQuestion.options.map((option, index) => (
-            <li
-              key={index}
-              onClick={() => handleAnswerClick(option[0])} // Ambil huruf pertama sebagai jawaban
-              className={`option ${selectedAnswer === option[0] ? 'selected' : ''}`}
+    <div className="quiz-topics">
+      <h2>Latihan Soal Semester 1</h2>
+      <div className="topics-grid">
+        {topics.map((topic) => (
+          <div key={topic.id} className="topic-card">
+            <img src={topic.image} alt={topic.title} className="topic-image" />
+            <h3 className="topic-title">{topic.title}</h3>
+            <button
+              className="topic-button"
+              onClick={() => handleButtonClick(topic.route)} 
             >
-              {option}
-            </li>
-          ))}
-        </ul>
-        <button className="check-answer" onClick={checkAnswer} disabled={!selectedAnswer}>
-          {selectedAnswer ? 'Check Answer' : 'Select an Option'}
-        </button>
-        {feedback && <p className={`feedback ${feedback.includes('Correct') ? 'correct' : 'incorrect'}`}>{feedback}</p>}
-        {feedback && currentQuestionIndex < questions.length - 1 && (
-          <button className="next-question" onClick={nextQuestion}>
-            Next Question
-          </button>
-        )}
+              Mulai Kuis
+            </button>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
 

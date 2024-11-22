@@ -5,6 +5,8 @@ import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import Vocabulary from './components/Vocabulary';
 import Questions from './components/Questions';
+import Quis1 from './components/Quis1';
+import Quis2 from './components/Quis2';
 import Downloads from './components/Downloads';
 import Materi from './components/Materi'
 
@@ -19,6 +21,8 @@ function App() {
           <Route path="/questions" element={<Questions />} />
           <Route path="/downloads" element={<Downloads />} />
           <Route path="/materi" element={<Materi />} />
+          <Route path="/quis1" element={<Quis1 />} />
+          <Route path="/quis2" element={<Quis2 />} />
         </Routes>
         <Footer />
       </div>
