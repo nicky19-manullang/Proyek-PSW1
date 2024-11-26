@@ -1,61 +1,103 @@
-.quiz-topics {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-  text-align: center;
-  background-color: #ffffff;
-  color: #4a4a4a;
+.quiz-container {
+  margin: 20px;
+  font-family: Arial, sans-serif;
 }
 
-.quiz-topics h2 {
-  font-size: 28px;
+.semester-section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: #5a4fcf; /* Tema ungu */
   margin-bottom: 20px;
-  color: #5c4aff;
+  text-align: center;
 }
 
-.topics-grid {
+.slick-slide {
   display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: center; /* Align cards in the center */
 }
 
 .topic-card {
-  background: #f9f9ff;
-  border: 1px solid #dedede;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  max-width: 300px;
-  text-align: left;
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  margin: 0 30px; /* Add more space between cards */
+  width: 250px; /* Set a fixed width for each card */
 }
 
 .topic-image {
-  width: 300px; /* Set lebar tetap */
-  height: 150px; /* Set tinggi tetap */
-  object-fit: cover; /* Mengatur agar gambar tidak terdistorsi */
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .topic-title {
   font-size: 18px;
-  margin: 10px 15px;
-  color: #4a4a4a;
+  font-weight: bold;
+  margin: 10px 0;
+  color: black; /* Set title color to black */
 }
 
 .topic-button {
-  display: block;
-  width: 90%;
-  margin: 15px auto;
-  padding: 10px;
-  font-size: 16px;
-  color: #ffffff;
-  background-color: #5c4aff;
+  background: #5a4fcf;
+  color: white;
   border: none;
+  padding: 10px 15px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  margin-top: 10px; /* Add some margin to move it below the title */
 }
 
 .topic-button:hover {
-  background-color: #4a3ecc;
+  background: #4a3ec1;
+}
+
+/* Custom Arrows */
+.custom-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 2;
+}
+
+.prev-arrow {
+  left: -10px;
+}
+
+.next-arrow {
+  right: -10px;
+}
+
+.custom-arrow span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #5a4fcf;
+}
+
+.custom-arrow:hover {
+  background: #f0f0f0;
+}
+
+/* Remove dots under title */
+.slick-dots {
+  display: none !important; /* Hide dots */
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1;
 }
