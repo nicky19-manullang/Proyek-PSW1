@@ -1,63 +1,75 @@
+/* Container utama */
 .quiz-container {
   margin: 20px;
   font-family: Arial, sans-serif;
 }
 
+/* Section untuk tiap semester */
 .semester-section {
-  margin-bottom: 40px;
+  margin-bottom: 40px; /* Jarak antar section */
 }
 
 h2 {
-  color: #5a4fcf; /* Tema ungu */
+  color: #5a4fcf; /* Warna judul tema */
   margin-bottom: 20px;
   text-align: center;
 }
 
-.slick-slide {
+/* Container untuk slider (flexbox untuk jarak antar kartu) */
+.slick-list {
   display: flex;
-  justify-content: center; /* Align cards in the center */
+  gap: 20px; /* Jarak antar kartu di slider */
+  padding: 0 10px;
 }
 
+.slick-slide {
+  display: flex;
+  justify-content: center; /* Pusatkan isi kartu */
+}
+
+/* Kartu Materi */
 .topic-card {
   background: #ffffff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  padding: 20px;
-  margin: 0 30px; /* Add more space between cards */
-  width: 250px; /* Set a fixed width for each card */
+  padding: 0px;
+  width: 150px; /* Lebar tetap untuk kartu */
+  height: 300px; /* Tinggi tetap untuk menjaga konsistensi */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Mulai isi dari atas */
+  transition: transform 0.3s ease-in-out;
 }
 
+.topic-card:hover {
+  transform: translateY(-5px); /* Efek hover: naik sedikit */
+}
+
+/* Gambar di dalam kartu */
 .topic-image {
   width: 100%;
-  height: 150px;
+  height: 120px;
   object-fit: cover;
   border-radius: 10px;
 }
 
+/* Judul Materi */
 .topic-title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  margin: 10px 0;
-  color: black; /* Set title color to black */
+  color: #333; /* Warna teks */
+  margin: 15px 0; /* Jarak antara gambar dan judul */
 }
 
-.topic-button {
-  background: #5a4fcf;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px; /* Add some margin to move it below the title */
+
+/* Hilangkan titik-titik dekoratif */
+.topic-title::after {
+  content: none; /* Hapus elemen dekorasi */
 }
 
-.topic-button:hover {
-  background: #4a3ec1;
-}
-
-/* Custom Arrows */
+/* Navigasi (panah) di slider */
 .custom-arrow {
   display: flex;
   justify-content: center;
@@ -89,15 +101,50 @@ h2 {
 }
 
 .custom-arrow:hover {
-  background: #f0f0f0;
+  background: #f0f0f0; /* Efek hover panah */
 }
 
-/* Remove dots under title */
-.slick-dots {
-  display: none !important; /* Hide dots */
+.start-quiz-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-.slick-prev,
-.slick-next {
-  z-index: 1;
+.topic-button {
+  background: #5a4fcf; /* Warna ungu */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+}
+
+.topic-button:hover {
+  background: #4a3ec1; /* Warna ungu lebih gelap saat hover */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+  .slick-list {
+    gap: 10px; /* Kurangi jarak antar kartu untuk layar kecil */
+  }
+
+  .topic-card {
+    width: 90%; /* Lebar kartu mengikuti layar */
+    height: auto; /* Tinggi otomatis */
+  }
+
+  .topic-image {
+    height: 100px; /* Gambar lebih kecil di layar kecil */
+  }
+
+  .topic-title {
+    font-size: 14px; /* Ukuran teks lebih kecil */
+  }
+
+  .topic-button {
+    padding: 8px 12px; /* Ukuran tombol lebih kecil */
+  }
 }
