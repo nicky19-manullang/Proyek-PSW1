@@ -3,11 +3,11 @@ import '../styles/Downloads.css';
 
 function Downloads() {
     const semesterOneMaterials = [
-        { name: "Vocabulary List", file: "/files/vocabulary-list.pdf", type: "PDF", icon: "/images/vocabul.jpg" },
-        { name: "Grammar Guide", file: "/files/grammar-guide-sem1.pdf", type: "PDF", icon: "/images/grammar-icon.png" },
-        { name: "Practice Questions", file: "/files/practice-questions-sem1.pdf", type: "PDF", icon: "/images/questions-icon.png" },
-        { name: "Practice Questions", file: "/files/practice-questions-sem1.pdf", type: "PDF", icon: "/images/questions-icon.png" },
-        { name: "Practice Questions", file: "/files/practice-questions-sem1.pdf", type: "PDF", icon: "/images/questions-icon.png" },
+        { name: "Materi Sentence Structure Bahasa Inggris SMA Kelas 11 Semester 1", file: "/files/Modul 1. Materi Sentence Structure Bahasa Inggris SMA Kelas 11 Semester 1", type: "PDF", icon: "/images/SentenceStrucutre.jpg" },
+        { name: "Materi Type of Sentence Bahasa Inggris SMA Kelas 11 Semester 1", file: "/files/Modul 2. Materi Type of Sentence Bahasa Inggris SMA Kelas 11 Semester 1", type: "PDF", icon: "/images/typesofsentences.png" },
+        { name: "Materi Classification of Sentence Bahasa Inggris SMA Kelas 11 Semester 1", file: "/files/Modul 3. Materi Classification of Sentence Bahasa Inggris SMA Kelas 11 Semester 1", type: "PDF", icon: "/images/classificatioin.png" },
+        { name: "Materi Type of Clauses Bahasa Inggris SMA Kelas 11 Semester 1", file: "/files/Modul 4. Materi Type of Clauses Bahasa Inggris SMA Kelas 11 Semester 1", type: "PDF", icon: "/images/Typesofclauses.webp" },
+        { name: "Materi Sentence Connectors Bahasa Inggris SMA Kelas 11 Semester 1", file: "/files/Modul 5. Materi Sentence Connectors Bahasa Inggris SMA Kelas 11 Semester 1", type: "PDF", icon: "/images/sentenceconectors.jpg" },
     ];
 
     const semesterTwoMaterials = [
