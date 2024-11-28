@@ -174,14 +174,3 @@ h2, h3 {
   }
 }
 
-@keyframes backgroundFade {
-  0% {
-    background-color: #f0f8ff;
-  }
-  50% {
-    background-color: #ffcc80;
-  }
-  100% {
-    background-color: #f0f8ff;
-  }
-}
