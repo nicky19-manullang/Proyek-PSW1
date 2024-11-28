@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/Quis.css';
 
-function Quis2() {
+function Quis4() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
@@ -9,20 +9,56 @@ function Quis2() {
 
   const questions = [
     {
-      question: "1.	What is the function of a declarative sentence?",
-      options: ['a. To ask a question', 'b. To state information ', 'c. To give a command'],
-      correctAnswer: 'b',
+      question: "Complete the sentence with the correct modal: You ___ (not/smoke) in this area. It's prohibited.",
+      options: ['A. cannot', 'B. may not', 'C. must not', 'D. should not'],
+      correctAnswer: 'C',
     },
     {
-      question: "2.	Which sentence is an interrogative sentence?",
-      options: ['a. She is going to the store.', 'b. Are you coming to the party? ', 'c. Please help me'],
-      correctAnswer: 'b',
+      question: "Which modal expresses a strong obligation?",
+      options: ['A. Can', 'B. May', 'C. Must', 'D. Might'],
+      correctAnswer: 'C',
     },
     {
-      question: "3.	Exclamatory sentences are typically used to:",
-      options: ['a. State facts', 'b. Express emotions ', 'c. Give instructions'],
-      correctAnswer: 'b',
+      question: "Choose the correct sentence:",
+      options: ['A. She can to swim well.', 'B. She can swim well.', 'C. She can swimming well.', 'D. She can swims well.'],
+      correctAnswer: 'B',
     },
+    {
+        question: "Translate into English: Dia mungkin akan datang ke pesta.",
+        options: ['A. He can come to the party.', 'B. He might come to the party.', 'C. He must come to the party.', 'D. He should come to the party.'],
+        correctAnswer: 'B',
+    },
+    {
+        question: "What is the correct modal to ask for permission formally?",
+        options: ['A. Shall', 'B. Can', 'C. May', 'D. Will'],
+        correctAnswer: 'C',
+    },
+    {
+        question: "Identify the error in the sentence: You should to apologize to her.",
+        options: ['A. You', 'B. should', 'C. to apologize', 'D. to her'],
+        correctAnswer: 'C',
+    },
+    {
+        question: "Complete the sentence: We ___ (go) to the park if it doesn’t rain tomorrow.",
+        options: ['A. will', 'B. can', 'C. must', 'D. may'],
+        correctAnswer: 'A',
+    },
+    {
+        question: "Which modal expresses ability in the past?",
+        options: ['A. Could', 'B. Can', 'C. Must', 'D. Should'],
+        correctAnswer: 'A',
+    },
+    {
+        question: "Translate into English: Kamu seharusnya memakan lebih banyak sayuran.",
+        options: ['A. You can eat more vegetables.', 'B. You should eat more vegetables.', 'C. You must eat more vegetables.', 'D. You might eat more vegetables.'],
+        correctAnswer: 'B',
+    },
+    {
+        question: "Complete the question: ___ I help you with your homework?",
+        options: ['A. May', 'B. Can', 'C. Should', 'D. Must'],
+        correctAnswer: 'B',
+    },
+
   ];
 
   const currentQuestion = questions[currentQuestionIndex];
@@ -92,4 +128,4 @@ function Quis2() {
   );
 }
 
-export default Quis2;
+export default Quis4;

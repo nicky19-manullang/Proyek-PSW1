@@ -7,6 +7,11 @@ import Vocabulary from './components/Vocabulary';
 import Questions from './components/Questions';
 import Quis1 from './components/Quis1';
 import Quis2 from './components/Quis2';
+import Quis3 from './components/Quis3';
+import Quis4 from './components/Quis4';
+import Quis5 from './components/Quis5';
+import Quis6 from './components/Quis6';
+import Quis7 from './components/Quis7';
 import Downloads from './components/Downloads';
 import Materi from './components/Materi';
 import 'slick-carousel/slick/slick.css';
@@ -25,6 +30,11 @@ function App() {
           <Route path="/materi" element={<Materi />} />
           <Route path="/quis1" element={<Quis1 />} />
           <Route path="/quis2" element={<Quis2 />} />
+          <Route path="/quis3" element={<Quis3 />} />
+          <Route path="/quis4" element={<Quis4 />} />
+          <Route path="/quis5" element={<Quis5 />} />
+          <Route path="/quis6" element={<Quis6 />} />
+          <Route path="/quis7" element={<Quis7 />} />
         </Routes>
         <Footer />
       </div>
