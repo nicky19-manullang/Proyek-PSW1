@@ -22,14 +22,14 @@ function Questions() {
     },
     {
       id: 3,
-      image: 'https://i.pinimg.com/736x/c8/fb/ea/c8fbead950fcef89535966b329a21124.jpg',
+      image: 'https://i.pinimg.com/736x/af/aa/6a/afaa6a66011b016d7dae7446d317c546.jpg',
       title: 'Classification of Sentences',
       route: '/quis3',
       background: 'linear-gradient(135deg, #E8FFEB, #FFF)',
     },
     {
       id: 4,
-      image: 'https://i.pinimg.com/736x/ca/48/51/ca4851d61464eb9a7e6b9c4d46ab97db.jpg',
+      image: 'https://i.pinimg.com/736x/e5/c0/0d/e5c00d71ba9f3e465e6a38f3d884db54.jpg',
       title: 'Active and Passive Voice',
       route: '/quis4',
       background: 'linear-gradient(135deg, #E8F0FF, #FFF)',
