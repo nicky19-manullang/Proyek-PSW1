@@ -34,32 +34,46 @@ function Questions() {
       route: '/quis4',
       background: 'linear-gradient(135deg, #E8F0FF, #FFF)',
     },
+    {
+      id: 5,
+      image: 'https://i.pinimg.com/736x/e5/c0/0d/e5c00d71ba9f3e465e6a38f3d884db54.jpg',
+      title: 'Active and Passive Voice',
+      route: '/quis4',
+      background: 'linear-gradient(135deg, #E8F0FF, #FFF)',
+    },
   ];
 
   const semester2Topics = [
     {
-      id: 5,
+      id: 6,
       image: 'https://i.pinimg.com/736x/68/a6/c2/68a6c2747c4037399c8b06561b69a410.jpg',
       title: 'Direct and Indirect Speech',
       route: '/quis5',
       background: 'linear-gradient(135deg, #FFE8F4, #FFF)',
     },
     {
-      id: 6,
+      id: 7,
       image: 'https://i.pinimg.com/736x/d5/9c/bd/d59cbd2e8f012cb12445319c4cda4d27.jpg',
       title: 'Tenses',
       route: '/quis6',
       background: 'linear-gradient(135deg, #F4FFE8, #FFF)',
     },
     {
-      id: 7,
+      id: 8,
       image: 'https://i.pinimg.com/736x/bc/2d/19/bc2d19b2e4d7f7d3ed25853f9f9ab71a.jpg',
       title: 'Conditional Sentences',
       route: '/quis7',
       background: 'linear-gradient(135deg, #E8F8FF, #FFF)',
     },
     {
-      id: 8,
+      id: 9,
+      image: 'https://i.pinimg.com/736x/5f/16/0b/5f160b2b2214b1b2817df404d12ab2cc.jpg',
+      title: 'Reported Speech',
+      route: '/quis8',
+      background: 'linear-gradient(135deg, #FFF1E8, #FFF)',
+    },
+    {
+      id: 10,
       image: 'https://i.pinimg.com/736x/5f/16/0b/5f160b2b2214b1b2817df404d12ab2cc.jpg',
       title: 'Reported Speech',
       route: '/quis8',

@@ -172,15 +172,7 @@ h2, h3 {
     opacity: 1;
   }
 }
+<<<<<<< HEAD
+=======
 
-@keyframes backgroundFade {
-  0% {
-    background-color: #f0f8ff;
-  }
-  50% {
-    background-color: #ffcc80;
-  }
-  100% {
-    background-color: #f0f8ff;
-  }
-}
+>>>>>>> 9fdbd4af8dddbf8b0d0750046e84ba91113eceb9
