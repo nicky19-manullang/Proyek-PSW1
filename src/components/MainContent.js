@@ -7,22 +7,21 @@ function MainContent() {
 
   // Fungsi untuk menavigasi ke halaman Materi
   const goToMateriPage = () => {
-    navigate("/materi"); // Mengarahkan ke halaman Materi
+    navigate("/materi");
   };
 
   return (
     <main className="main-content">
-      <div className="content-wrapper">
+      <div className="header-section">
         <div className="text-section">
           <h1>JOUENGLISH</h1>
-          <p>Online English Class</p>
+          <p>Your Ultimate Online English Learning Platform</p>
         </div>
         <div className="logo-container">
           <img src="/images/hero.png" alt="JOUEnglish Logo" className="logo" />
         </div>
       </div>
 
-      {/* Iklan Video Singkat */}
       <div className="advertisement-container">
         <h2>Watch Our Introduction Video</h2>
         <video className="advertisement-video" controls autoPlay>
@@ -31,51 +30,59 @@ function MainContent() {
         </video>
       </div>
 
-      {/* Jadwal Belajar */}
       <div className="schedule-container">
-        <h2>Jadwal Belajar</h2>
+        <h2>Learning Schedule</h2>
         <table className="schedule-table">
           <thead>
             <tr>
-              <th>Hari</th>
-              <th>Materi</th>
-              <th>Jam</th>
+              <th>Day</th>
+              <th>Topic</th>
+              <th>Time</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Senin</td>
+              <td>Monday</td>
               <td>Can and Could</td>
               <td>10:00 - 11:00</td>
             </tr>
             <tr>
-              <td>Selasa</td>
+              <td>Tuesday</td>
               <td>Asking and Giving Opinion</td>
               <td>10:00 - 11:00</td>
             </tr>
             <tr>
-              <td>Rabu</td>
+              <td>Wednesday</td>
               <td>Future Perfect Tense</td>
               <td>10:00 - 11:00</td>
             </tr>
             <tr>
-              <td>Kamis</td>
+              <td>Thursday</td>
               <td>Personal Letter</td>
               <td>10:00 - 11:00</td>
             </tr>
             <tr>
-              <td>Jumat</td>
+              <td>Friday</td>
               <td>Analytical Exposition</td>
               <td>10:00 - 11:00</td>
             </tr>
           </tbody>
         </table>
       </div>
+      <div className="fun-facts-container">
+        <h2>Fun Facts About English</h2>
+        <ul className="fun-facts-list">
+          <li>English is the official language of 67 countries.</li>
+          <li>The word "set" has the most meanings in English.</li>
+          <li>Over 1.5 billion people speak English worldwide.</li>
+          <li>Shakespeare added over 1,700 words to the English language.</li>
+          <li>The most commonly used letter in English is "E".</li>
+        </ul>
+      </div>
 
-      {/* Tombol untuk mengarahkan ke halaman Materi */}
       <div className="cta-container">
         <button className="cta-button" onClick={goToMateriPage}>
-          Go to Materi
+          Explore Materials
         </button>
       </div>
     </main>
