@@ -42,8 +42,9 @@ body {
 }
 
 .topic-image {
-  width: 100%;
-  height: auto;
+  width: 181px;
+  height: 116px;
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
 }

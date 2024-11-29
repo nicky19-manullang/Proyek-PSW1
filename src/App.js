@@ -27,8 +27,6 @@ import Modul7 from "./components/Modul7";
 import Modul8 from "./components/Modul8";
 import Modul9 from "./components/Modul9";
 import Modul10 from "./components/Modul10";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 function App() {
   return (
