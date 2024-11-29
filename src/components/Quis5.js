@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Quis.css';
 
 function Quis5() {
@@ -7,59 +8,91 @@ function Quis5() {
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
   const [quizFinished, setQuizFinished] = useState(false);
 
+  const navigate = useNavigate();
   const questions = [
     {
-      question: "Complete the sentence with the correct modal: You ___ (not/smoke) in this area. It's prohibited.",
-      options: ['A. cannot', 'B. may not', 'C. must not', 'D. should not'],
-      correctAnswer: 'C',
-    },
-    {
-      question: "Which modal expresses a strong obligation?",
-      options: ['A. Can', 'B. May', 'C. Must', 'D. Might'],
-      correctAnswer: 'C',
-    },
-    {
-      question: "Choose the correct sentence:",
-      options: ['A. She can to swim well.', 'B. She can swim well.', 'C. She can swimming well.', 'D. She can swims well.'],
-      correctAnswer: 'B',
-    },
-    {
-        question: "Translate into English: Dia mungkin akan datang ke pesta.",
-        options: ['A. He can come to the party.', 'B. He might come to the party.', 'C. He must come to the party.', 'D. He should come to the party.'],
+        question: "1. What is the function of coordinating conjunctions?",
+        options: [
+            'A. To connect a main clause with a dependent clause',
+            'B. To connect two clauses that are equal',
+            'C. To introduce a dependent clause',
+            'D. To modify nouns or verbs'
+        ],
         correctAnswer: 'B',
     },
     {
-        question: "What is the correct modal to ask for permission formally?",
-        options: ['A. Shall', 'B. Can', 'C. May', 'D. Will'],
+        question: "2. Which of the following is a coordinating conjunction?",
+        options: ['A. Because', 'B. When', 'C. And', 'D. Although'],
         correctAnswer: 'C',
     },
     {
-        question: "Identify the error in the sentence: You should to apologize to her.",
-        options: ['A. You', 'B. should', 'C. to apologize', 'D. to her'],
+        question: "3. What is the function of subordinating conjunctions?",
+        options: [
+            'A. To connect a main clause with a dependent clause',
+            'B. To connect two equal clauses',
+            'C. To express contrast between ideas',
+            'D. To indicate a question'
+        ],
+        correctAnswer: 'A',
+    },
+    {
+        question: "4. Which sentence contains a coordinating conjunction?",
+        options: [
+            'A. I stayed home because it was raining.',
+            'B. I wanted to go outside, but it was raining.',
+            'C. Although it was sunny, I stayed inside.',
+            'D. If it rains, we will cancel the picnic.'
+        ],
+        correctAnswer: 'B',
+    },
+    {
+        question: "5. Which of the following is a subordinating conjunction?",
+        options: ['A. But', 'B. Or', 'C. Although', 'D. And'],
         correctAnswer: 'C',
     },
     {
-        question: "Complete the sentence: We ___ (go) to the park if it doesn’t rain tomorrow.",
-        options: ['A. will', 'B. can', 'C. must', 'D. may'],
+        question: "6. What does the subordinating conjunction 'because' indicate?",
+        options: [
+            'A. A cause or reason',
+            'B. A time relationship',
+            'C. A contrast',
+            'D. A choice between options'
+        ],
         correctAnswer: 'A',
     },
     {
-        question: "Which modal expresses ability in the past?",
-        options: ['A. Could', 'B. Can', 'C. Must', 'D. Should'],
+        question: "7. Identify the subordinating conjunction in this sentence: 'I will go to the park if it stops raining.'",
+        options: ['A. If', 'B. Go', 'C. Will', 'D. Stops'],
         correctAnswer: 'A',
     },
     {
-        question: "Translate into English: Kamu seharusnya memakan lebih banyak sayuran.",
-        options: ['A. You can eat more vegetables.', 'B. You should eat more vegetables.', 'C. You must eat more vegetables.', 'D. You might eat more vegetables.'],
+        question: "8. Which sentence correctly uses a subordinating conjunction?",
+        options: [
+            'A. I went to the store, and I bought milk.',
+            'B. She didn’t come to the party because she was sick.',
+            'C. We could go to the beach or stay home.',
+            'D. The sun was shining, but it was cold.'
+        ],
         correctAnswer: 'B',
     },
     {
-        question: "Complete the question: ___ I help you with your homework?",
-        options: ['A. May', 'B. Can', 'C. Should', 'D. Must'],
+        question: "9. What is the coordinating conjunction in this sentence: 'I want to go to the beach, but it is raining.'",
+        options: ['A. Want', 'B. To', 'C. But', 'D. Is'],
+        correctAnswer: 'C',
+    },
+    {
+        question: "10. How do conjunctions improve sentence structure?",
+        options: [
+            'A. By making sentences shorter',
+            'B. By clarifying relationships between ideas',
+            'C. By adding more verbs to a sentence',
+            'D. By separating unrelated ideas'
+        ],
         correctAnswer: 'B',
     },
+];
 
-  ];
+
 
   const currentQuestion = questions[currentQuestionIndex];
 
@@ -85,6 +118,10 @@ function Quis5() {
     setSelectedAnswer(null);
     setCorrectAnswersCount(0);
     setQuizFinished(false);
+  };
+
+  const goBackToQuestions = () => {
+    navigate('/questions'); // Navigasi ke halaman Questions
   };
 
   return (
@@ -121,6 +158,9 @@ function Quis5() {
           </p>
           <button className="btn restart-quiz" onClick={restartQuiz}>
             Restart Quiz
+          </button>
+          <button className="btn back-to-questions" onClick={goBackToQuestions}>
+            Back to Soal Latihan
           </button>
         </div>
       )}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Quis.css';
 
 function Quis7() {
@@ -7,59 +8,89 @@ function Quis7() {
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
   const [quizFinished, setQuizFinished] = useState(false);
 
+  const navigate = useNavigate();
   const questions = [
     {
-      question: "Complete the sentence with the correct modal: You ___ (not/smoke) in this area. It's prohibited.",
-      options: ['A. cannot', 'B. may not', 'C. must not', 'D. should not'],
-      correctAnswer: 'C',
-    },
-    {
-      question: "Which modal expresses a strong obligation?",
-      options: ['A. Can', 'B. May', 'C. Must', 'D. Might'],
-      correctAnswer: 'C',
-    },
-    {
-      question: "Choose the correct sentence:",
-      options: ['A. She can to swim well.', 'B. She can swim well.', 'C. She can swimming well.', 'D. She can swims well.'],
-      correctAnswer: 'B',
-    },
-    {
-        question: "Translate into English: Dia mungkin akan datang ke pesta.",
-        options: ['A. He can come to the party.', 'B. He might come to the party.', 'C. He must come to the party.', 'D. He should come to the party.'],
+        question: "1. Which modal verb is used to express ability or permission?",
+        options: ['A. May', 'B. Can', 'C. Must', 'D. Should'],
         correctAnswer: 'B',
     },
     {
-        question: "What is the correct modal to ask for permission formally?",
-        options: ['A. Shall', 'B. Can', 'C. May', 'D. Will'],
-        correctAnswer: 'C',
-    },
-    {
-        question: "Identify the error in the sentence: You should to apologize to her.",
-        options: ['A. You', 'B. should', 'C. to apologize', 'D. to her'],
-        correctAnswer: 'C',
-    },
-    {
-        question: "Complete the sentence: We ___ (go) to the park if it doesn’t rain tomorrow.",
-        options: ['A. will', 'B. can', 'C. must', 'D. may'],
+        question: "2. What is the formula for using 'must'?",
+        options: [
+            'A. Subject + must + Verb 1',
+            'B. Subject + must + Verb 2',
+            'C. Subject + must + to + Verb 1',
+            'D. Subject + must + be + Verb-ing'
+        ],
         correctAnswer: 'A',
     },
     {
-        question: "Which modal expresses ability in the past?",
-        options: ['A. Could', 'B. Can', 'C. Must', 'D. Should'],
+        question: "3. Which sentence uses 'may' correctly?",
+        options: [
+            'A. She may swims well.',
+            'B. It may rain this evening.',
+            'C. May she to come in?',
+            'D. They may going to the park.'
+        ],
+        correctAnswer: 'B',
+    },
+    {
+        question: "4. What is the function of 'should'?",
+        options: [
+            'A. To express obligation',
+            'B. To express ability',
+            'C. To give advice or recommendation',
+            'D. To express a low possibility'
+        ],
+        correctAnswer: 'C',
+    },
+    {
+        question: "5. Identify the modal verb in this sentence: 'You must wear a helmet while riding a bike.'",
+        options: ['A. Must', 'B. Wear', 'C. Helmet', 'D. Riding'],
         correctAnswer: 'A',
     },
     {
-        question: "Translate into English: Kamu seharusnya memakan lebih banyak sayuran.",
-        options: ['A. You can eat more vegetables.', 'B. You should eat more vegetables.', 'C. You must eat more vegetables.', 'D. You might eat more vegetables.'],
+        question: "6. Which modal verb indicates a polite request?",
+        options: ['A. Can', 'B. Could', 'C. Should', 'D. Will'],
         correctAnswer: 'B',
     },
     {
-        question: "Complete the question: ___ I help you with your homework?",
-        options: ['A. May', 'B. Can', 'C. Should', 'D. Must'],
+        question: "7. Choose the sentence that uses 'will' correctly:",
+        options: [
+            'A. She will to call you tomorrow.',
+            'B. It will be a sunny day.',
+            'C. They will going to the museum.',
+            'D. He will plays the guitar.'
+        ],
         correctAnswer: 'B',
     },
-
-  ];
+    {
+        question: "8. What does 'might' indicate?",
+        options: [
+            'A. A strong obligation',
+            'B. A low possibility',
+            'C. An ability in the past',
+            'D. A future prediction'
+        ],
+        correctAnswer: 'B',
+    },
+    {
+        question: "9. In which sentence does 'could' express past ability?",
+        options: [
+            'A. Could you help me, please?',
+            'B. He could play the piano when he was five.',
+            'C. Could you lend me your book?',
+            'D. She could come to the party later.'
+        ],
+        correctAnswer: 'B',
+    },
+    {
+        question: "10. Which modal verb is used to express a habit in the past?",
+        options: ['A. Could', 'B. Would', 'C. Might', 'D. Should'],
+        correctAnswer: 'B',
+    },
+];
 
   const currentQuestion = questions[currentQuestionIndex];
 
@@ -85,6 +116,10 @@ function Quis7() {
     setSelectedAnswer(null);
     setCorrectAnswersCount(0);
     setQuizFinished(false);
+  };
+
+  const goBackToQuestions = () => {
+    navigate('/questions'); // Navigasi ke halaman Questions
   };
 
   return (
@@ -121,6 +156,9 @@ function Quis7() {
           </p>
           <button className="btn restart-quiz" onClick={restartQuiz}>
             Restart Quiz
+          </button>
+          <button className="btn back-to-questions" onClick={goBackToQuestions}>
+            Back to Soal Latihan
           </button>
         </div>
       )}
