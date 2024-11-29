@@ -12,6 +12,9 @@ import Quis4 from './components/Quis4';
 import Quis5 from './components/Quis5';
 import Quis6 from './components/Quis6';
 import Quis7 from './components/Quis7';
+import Quis8 from './components/Quis8';
+import Quis9 from './components/Quis9';
+import Quis10 from './components/Quis10';
 import Downloads from './components/Downloads';
 import Materi from './components/Materi';
 import Modul1 from "./components/Modul1";
@@ -45,6 +48,9 @@ function App() {
           <Route path="/quis5" element={<Quis5 />} />
           <Route path="/quis6" element={<Quis6 />} />
           <Route path="/quis7" element={<Quis7 />} />
+          <Route path="/quis8" element={<Quis8 />} />
+          <Route path="/quis9" element={<Quis9 />} />
+          <Route path="/quis10" element={<Quis10 />} />
           <Route path="/modul1" element={<Modul1 />} />
           <Route path="/modul2" element={<Modul2 />} />
           <Route path="/modul3" element={<Modul3 />} />
