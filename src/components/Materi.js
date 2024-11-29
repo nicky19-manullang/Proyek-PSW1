@@ -56,13 +56,13 @@ function Materi() {
     {
       title: "Modul 7: Penggunaan Modal",
       topics: ["Modal seperti can, may, must, should, will, etc."],
-      image: "/assets/penggunaan-modal.png",
+      image: "/images/modals.png",
       link: "/modul7",
     },
     {
       title: "Modul 8: Penggunaan Keterangan",
       topics: ["Keterangan waktu, tempat, dan cara"],
-      image: "/assets/penggunaan-keterangan.png",
+      image: "/images/adverb.png",
       link: "/modul8",
     },
     {
@@ -70,13 +70,13 @@ function Materi() {
       topics: [
         "Frasa preposisi, frasa nominal, dan frasa verba",
       ],
-      image: "/assets/penggunaan-frasa.png",
+      image: "/images/phares.png",
       link: "/modul9",
     },
     {
       title: "Modul 10: Punctuation",
       topics: ["Tanda baca seperti koma, titik, tanda tanya, tanda seru"],
-      image: "/assets/punctuation.png",
+      image: "/images/punctuation.png",
       link: "/modul10",
     },
   ];
