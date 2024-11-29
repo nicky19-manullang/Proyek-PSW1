@@ -1,88 +1,202 @@
-/* Modul.css */
-
-/* Gaya dasar untuk halaman modul */
 .modul-page {
-    padding: 20px;
-    font-family: "Arial", sans-serif;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+  padding: 20px;
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Judul utama halaman */
+.modul-page h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  border-bottom: 3px solid #3498db;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Paragraf utama */
+.modul-page p {
+  font-size: 1.2rem;
+  color: #34495e;
+  margin-top: 15px;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.intro {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #34495e;
+  text-align: center;
+}
+
+/* Gaya untuk konten modul */
+.modul-content {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  margin-top: 30px;
+}
+
+.modul-content h2, .modul-content h3 {
+  font-size: 1.8rem;
+  color: #2980b9;
+  margin-bottom: 15px;
+}
+
+.modul-content ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.modul-content ul li {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.modul-content ul li::before {
+  content: "✔";
+  color: #27ae60;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.example {
+  background-color: #e6f7ff;
+  padding: 10px;
+  border-left: 4px solid #007acc;
+  margin-top: 10px;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.modul-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #3498db;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.modul-button:hover {
+  background-color: #2980b9;
+}
+
+.modul-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.modul-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  text-align: left;
+  font-size: 1rem;
+}
+
+.modul-table th, .modul-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.modul-table th {
+  background-color: #f4f4f4;
+  color: #2c3e50;
+  font-weight: bold;
+}
+
+.modul-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.modul-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin-top: 20px;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .modul-page {
+    padding: 15px;
   }
-  
-  .modul-page h2 {
-    font-size: 2.5rem;
-    color: #2c3e50;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    border-bottom: 3px solid #3498db;
-    display: inline-block;
-    padding-bottom: 5px;
+
+  .modul-page h1 {
+    font-size: 2rem;
   }
-  
+
   .modul-page p {
-    font-size: 1.2rem;
-    color: #34495e;
-    margin-top: 15px;
-    margin-bottom: 30px;
-  }
-  
-  .modul-content {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    text-align: left;
-  }
-  
-  .modul-content h3 {
-    font-size: 1.8rem;
-    color: #2980b9;
-    margin-bottom: 15px;
-  }
-  
-  .modul-content ul {
-    list-style: none;
-    padding-left: 0;
-  }
-  
-  .modul-content ul li {
     font-size: 1rem;
-    color: #2c3e50;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
   }
-  
-  .modul-content ul li::before {
-    content: "✔";
-    color: #27ae60;
-    margin-right: 10px;
-    font-weight: bold;
+
+  .modul-content h2, .modul-content h3 {
+    font-size: 1.6rem;
   }
-  
+
   .modul-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+  
+  .modul-table th, .modul-table td {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .example {
     font-size: 1rem;
-    color: #fff;
-    background-color: #3498db;
-    border: none;
-    border-radius: 5px;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
   }
-  
-  .modul-button:hover {
-    background-color: #2980b9;
+}
+
+@media (max-width: 480px) {
+  .modul-page {
+    padding: 10px;
   }
-  
-  .modul-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin: 20px 0;
+
+  .modul-page h1 {
+    font-size: 1.8rem;
   }
-  
+
+  .modul-content h2, .modul-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .modul-button {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .modul-table th, .modul-table td {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+
+  .example {
+    font-size: 0.9rem;
+  }
+}
