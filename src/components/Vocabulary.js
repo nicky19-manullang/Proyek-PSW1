@@ -25,8 +25,6 @@ function Vocabulary() {
     { word: 'tedious', definition: 'Too long, slow, or dull; tiresome or monotonous.', example: 'The journey was long and tedious.', category: 'adjective' },
     { word: 'ubiquitous', definition: 'Present, appearing, or found everywhere.', example: 'Smartphones have become ubiquitous in modern life.', category: 'adjective' },
     { word: 'vigilant', definition: 'Keeping careful watch for possible danger or difficulties.', example: 'The guards remained vigilant throughout the night.', category: 'adjective' },
-    { word: 'wary', definition: 'Feeling or showing caution about possible dangers or problems.', example: 'She was wary of strangers.', category: 'adjective' },
-    { word: 'zealous', definition: 'Having or showing great energy or enthusiasm in pursuit of a cause or objective.', example: 'He was zealous in his efforts to promote the product.', category: 'adjective' },
   ];
 
   const [words, setWords] = useState(() => {
