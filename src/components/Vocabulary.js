@@ -2,14 +2,21 @@ import React, { useState, useEffect } from 'react';
 import '../styles/Vocabulary.css';
 
 function Vocabulary() {
-  const [words, setWords] = useState([
-    { word: 'Resilient', definition: 'Able to recover quickly from difficulties.', example: 'She is very resilient in facing challenges.' },
-    { word: 'Innovative', definition: 'Introducing new ideas; creative.', example: 'The team came up with an innovative solution.' },
-  ]);
+  const [words, setWords] = useState(() => {
+    // Load data dari localStorage jika ada
+    const savedWords = localStorage.getItem('vocabularyWords');
+    return savedWords ? JSON.parse(savedWords) : [];
+  });
 
-  const [isAdding, setIsAdding] = useState(false); // Untuk menampilkan form
-  const [newWord, setNewWord] = useState({ word: '', definition: '', example: '' });
-  const [editingIndex, setEditingIndex] = useState(null); // Indeks untuk mode edit
+  const [isAdding, setIsAdding] = useState(false);
+  const [newWord, setNewWord] = useState({ word: '', definition: '', example: '', category: '' });
+  const [editingIndex, setEditingIndex] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  useEffect(() => {
+    // Simpan data ke localStorage setiap kali `words` berubah
+    localStorage.setItem('vocabularyWords', JSON.stringify(words));
+  }, [words]);
 
   useEffect(() => {
     const cards = document.querySelectorAll('.card');
@@ -21,19 +28,21 @@ function Vocabulary() {
   }, [words]);
 
   const handleAddWord = () => {
-    if (newWord.word && newWord.definition && newWord.example) {
+    if (newWord.word && newWord.definition && newWord.example && newWord.category) {
       setWords([...words, newWord]);
-      setNewWord({ word: '', definition: '', example: '' });
+      setNewWord({ word: '', definition: '', example: '', category: '' });
       setIsAdding(false);
+    } else {
+      alert('Please fill out all fields!');
     }
   };
 
   const handleEditWord = () => {
-    if (newWord.word && newWord.definition && newWord.example && editingIndex !== null) {
+    if (newWord.word && newWord.definition && newWord.example && newWord.category && editingIndex !== null) {
       const updatedWords = [...words];
       updatedWords[editingIndex] = newWord;
       setWords(updatedWords);
-      setNewWord({ word: '', definition: '', example: '' });
+      setNewWord({ word: '', definition: '', example: '', category: '' });
       setEditingIndex(null);
       setIsAdding(false);
     }
@@ -50,18 +59,31 @@ function Vocabulary() {
     setWords(updatedWords);
   };
 
-  // Fungsi untuk membatalkan aksi (baik tambah atau edit)
   const handleCancel = () => {
-    setNewWord({ word: '', definition: '', example: '' });
+    setNewWord({ word: '', definition: '', example: '', category: '' });
     setEditingIndex(null);
     setIsAdding(false);
   };
 
+  const filteredWords = words.filter((item) =>
+    item.word.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <section id="vocabulary" className="section vocabulary">
       <h2 className="section-title">Vocabulary Builder</h2>
+
+      {/* Input pencarian */}
+      <input
+        type="text"
+        className="search-bar"
+        placeholder="Search words..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+
       <div className="vocab-cards">
-        {words.map((item, index) => (
+        {filteredWords.map((item, index) => (
           <div key={index} className="card">
             <h4>
               Word: <strong>{item.word}</strong>
@@ -70,6 +92,7 @@ function Vocabulary() {
             <p>
               Example: <em>{item.example}</em>
             </p>
+            <p>Category: {item.category}</p>
             <div className="action-menu">
               <button className="edit-button" onClick={() => startEditing(index)}>
                 Edit
@@ -82,12 +105,10 @@ function Vocabulary() {
         ))}
       </div>
 
-      {/* Tombol untuk menambah kata */}
       <button className="cta-button" onClick={() => setIsAdding(true)}>
         {editingIndex === null ? 'Add New Word' : 'Edit Word'}
       </button>
 
-      {/* Form untuk menambah atau mengedit kata baru */}
       {isAdding && (
         <div className="add-word-form">
           <input
@@ -107,6 +128,12 @@ function Vocabulary() {
             placeholder="Example"
             value={newWord.example}
             onChange={(e) => setNewWord({ ...newWord, example: e.target.value })}
+          />
+          <input
+            type="text"
+            placeholder="Category (e.g., noun, verb)"
+            value={newWord.category}
+            onChange={(e) => setNewWord({ ...newWord, category: e.target.value })}
           />
           <div className="form-actions">
             <button className="cta-button" onClick={editingIndex === null ? handleAddWord : handleEditWord}>

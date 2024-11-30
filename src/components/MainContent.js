@@ -4,32 +4,36 @@ import "../styles/MainContent.css";
 
 function MainContent() {
   const navigate = useNavigate();
-  // Fungsi untuk menavigasi ke halaman Materi
+
   const goToMateriPage = () => {
     navigate("/materi");
   };
 
   return (
     <main className="main-content">
-      <div className="header-section">
+      <section className="header-section">
         <div className="text-section">
           <h1>JOUENGLISH</h1>
-          <p>Your Ultimate Online English Learning Platform</p>
+          <p className="subtitle">Your Ultimate Online English Learning Platform</p>
+          <p className="tagline">"Empowering you to master English easily and effectively"</p>
+          <button className="cta-button" onClick={goToMateriPage}>
+            Start Learning
+          </button>
         </div>
         <div className="logo-container">
           <img src="/images/hero.png" alt="JOUEnglish Logo" className="logo" />
         </div>
-      </div>
-
-      <div className="advertisement-container">
+      </section>
+      <section className="advertisement-container">
         <h2>Watch Our Introduction Video</h2>
-        <video className="advertisement-video" controls autoPlay>
-          <source src="/images/bing.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      </div>
-
-      <div className="schedule-container">
+        <div className="video-wrapper">
+          <video className="advertisement-video" controls autoPlay loop>
+            <source src="/images/bing.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+      <section className="schedule-container">
         <h2>Learning Schedule</h2>
         <table className="schedule-table">
           <thead>
@@ -67,23 +71,17 @@ function MainContent() {
             </tr>
           </tbody>
         </table>
-      </div>
-      <div className="fun-facts-container">
+      </section>
+      <section className="fun-facts-container">
         <h2>Fun Facts About English</h2>
-        <ul className="fun-facts-list">
-          <li>English is the official language of 67 countries.</li>
-          <li>The word "set" has the most meanings in English.</li>
-          <li>Over 1.5 billion people speak English worldwide.</li>
-          <li>Shakespeare added over 1,700 words to the English language.</li>
-          <li>The most commonly used letter in English is "E".</li>
-        </ul>
-      </div>
-
-      <div className="cta-container">
-        <button className="cta-button" onClick={goToMateriPage}>
-          Explore Materials
-        </button>
-      </div>
+        <div className="facts-grid">
+          <div className="fact-card">🌍 English is the official language of 67 countries.</div>
+          <div className="fact-card">📖 The word "set" has the most meanings in English.</div>
+          <div className="fact-card">🗣️ Over 1.5 billion people speak English worldwide.</div>
+          <div className="fact-card">✍️ Shakespeare added over 1,700 words to the English language.</div>
+          <div className="fact-card">🔤 The most commonly used letter in English is "E".</div>
+        </div>
+      </section>
     </main>
   );
 }
