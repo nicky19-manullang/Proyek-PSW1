@@ -55,8 +55,11 @@ function Vocabulary() {
   };
 
   const handleDeleteWord = (indexToDelete) => {
-    const updatedWords = words.filter((_, index) => index !== indexToDelete);
-    setWords(updatedWords);
+    const confirmDelete = window.confirm('Are you sure you want to delete this word?');
+    if (confirmDelete) {
+      const updatedWords = words.filter((_, index) => index !== indexToDelete);
+      setWords(updatedWords);
+    }
   };
 
   const handleCancel = () => {
