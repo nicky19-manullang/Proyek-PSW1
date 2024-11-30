@@ -77,8 +77,14 @@ function Questions() {
 
   return (
     <div className="quiz-container">
+      {/* Header Section */}
+      <header className="header">
+        <h1>CHALLENGE YOURSELF WITH THIS QUIZ!</h1>
+        <p>Improve your knowledge with fun and engaging quizzes.</p>
+      </header>
+
+      {/* Semester 1 */}
       <div className="semester-section">
-        <h1>Challenge Yourself with This Quiz!</h1>
         <h2>Quiz Semester 1</h2>
         <div className="topics-grid">
           {semester1Topics.map((topic) => (
@@ -96,6 +102,7 @@ function Questions() {
         </div>
       </div>
 
+      {/* Semester 2 */}
       <div className="semester-section">
         <h2>Quiz Semester 2</h2>
         <div className="topics-grid">
