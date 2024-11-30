@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Quis.css';
 
 function Quis3() {
@@ -7,59 +8,85 @@ function Quis3() {
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
   const [quizFinished, setQuizFinished] = useState(false);
 
+  const navigate = useNavigate();
   const questions = [
     {
-      question: "Complete the sentence with the correct modal: You ___ (not/smoke) in this area. It's prohibited.",
-      options: ['A. cannot', 'B. may not', 'C. must not', 'D. should not'],
-      correctAnswer: 'C',
-    },
-    {
-      question: "Which modal expresses a strong obligation?",
-      options: ['A. Can', 'B. May', 'C. Must', 'D. Might'],
-      correctAnswer: 'C',
-    },
-    {
-      question: "Choose the correct sentence:",
-      options: ['A. She can to swim well.', 'B. She can swim well.', 'C. She can swimming well.', 'D. She can swims well.'],
-      correctAnswer: 'B',
-    },
-    {
-        question: "Translate into English: Dia mungkin akan datang ke pesta.",
-        options: ['A. He can come to the party.', 'B. He might come to the party.', 'C. He must come to the party.', 'D. He should come to the party.'],
-        correctAnswer: 'B',
-    },
-    {
-        question: "What is the correct modal to ask for permission formally?",
-        options: ['A. Shall', 'B. Can', 'C. May', 'D. Will'],
-        correctAnswer: 'C',
-    },
-    {
-        question: "Identify the error in the sentence: You should to apologize to her.",
-        options: ['A. You', 'B. should', 'C. to apologize', 'D. to her'],
-        correctAnswer: 'C',
-    },
-    {
-        question: "Complete the sentence: We ___ (go) to the park if it doesn’t rain tomorrow.",
-        options: ['A. will', 'B. can', 'C. must', 'D. may'],
+        question: "1. What is the focus of an active sentence?",
+        options: ['A. The subject and the action they perform', 'B. The object receiving the action', 'C. The auxiliary verb used', 'D. The by-phrase'],
         correctAnswer: 'A',
     },
     {
-        question: "Which modal expresses ability in the past?",
-        options: ['A. Could', 'B. Can', 'C. Must', 'D. Should'],
+        question: "2. In a passive sentence, the focus is on:",
+        options: ['A. The subject performing the action', 'B. The object receiving the action', 'C. The type of verb used', 'D. The tense of the verb'],
+        correctAnswer: 'B',
+    },
+    {
+        question: "3. Which sentence is in the active voice?",
+        options: ['A. The homework was done by her.', 'B. The snake was killed by Roy.', 'C. Roy killed a snake.', 'D. The song was sung beautifully.'],
+        correctAnswer: 'C',
+    },
+    {
+        question: "4. What is the passive form of 'He helps his friend'?",
+        options: ['A. His friend helps him.', 'B. His friend is helped by him.', 'C. His friend helped him.', 'D. His friend is being helped.'],
+        correctAnswer: 'B',
+    },
+    {
+        question: "5. In the sentence 'A book was written by her,' which part indicates the doer of the action?",
+        options: ['A. A book', 'B. Was written', 'C. By her', 'D. The verb'],
+        correctAnswer: 'C',
+    },
+    {
+        question: "6. Which sentence is passive?",
+        options: ['A. The dog barked loudly.', 'B. The cake was baked by Sarah.', 'C. She is reading a book.', 'D. They play football every Sunday.'],
+        correctAnswer: 'B',
+    },
+    {
+        question: "7. What happens to the subject in an active-to-passive transformation?",
+        options: ['A. It becomes the object.', 'B. It is omitted.', 'C. It remains the same.', 'D. It becomes the focus.'],
         correctAnswer: 'A',
     },
     {
-        question: "Translate into English: Kamu seharusnya memakan lebih banyak sayuran.",
-        options: ['A. You can eat more vegetables.', 'B. You should eat more vegetables.', 'C. You must eat more vegetables.', 'D. You might eat more vegetables.'],
+        question: "8. Choose the correct transformation: 'Leon calls Armed.'",
+        options: ['A. Armed is called by Leon.', 'B. Armed calls Leon.', 'C. Leon is called by Armed.', 'D. Leon is calling Armed.'],
+        correctAnswer: 'A',
+    },
+    {
+        question: "9. Identify the active sentence:",
+        options: ['A. The car was repaired by the mechanic.', 'B. The mechanic repaired the car.', 'C. The car is being repaired by the mechanic.', 'D. The car has been repaired by the mechanic.'],
         correctAnswer: 'B',
     },
     {
-        question: "Complete the question: ___ I help you with your homework?",
-        options: ['A. May', 'B. Can', 'C. Should', 'D. Must'],
+        question: "10. What is the auxiliary verb in the sentence 'The homework is being done by the students'?",
+        options: ['A. Is being', 'B. Done', 'C. Homework', 'D. Students'],
+        correctAnswer: 'A',
+    },
+    {
+        question: "11. Passive voice sentences often omit the doer of the action when:",
+        options: ['A. The doer is unknown.', 'B. The object is important.', 'C. The action is ongoing.', 'D. The verb is in past tense.'],
+        correctAnswer: 'A',
+    },
+    {
+        question: "12. Which sentence shows a question in the passive voice?",
+        options: ['A. Who helps his friend?', 'B. Is his friend helped by him?', 'C. Does he help his friend?', 'D. What does he do?'],
         correctAnswer: 'B',
     },
+    {
+        question: "13. What is the passive form of 'They built the house in 2010'?",
+        options: ['A. The house builds in 2010.', 'B. The house was built by them in 2010.', 'C. They are building the house in 2010.', 'D. The house is built in 2010.'],
+        correctAnswer: 'B',
+    },
+    {
+        question: "14. In passive sentences, the word 'by' introduces:",
+        options: ['A. The action', 'B. The subject', 'C. The object', 'D. The doer of the action'],
+        correctAnswer: 'D',
+    },
+    {
+        question: "15. What is the passive form of 'She writes the letters'?",
+        options: ['A. The letters were written by her.', 'B. The letters are written by her.', 'C. The letters write by her.', 'D. The letters have been written by her.'],
+        correctAnswer: 'B',
+    },
+];
 
-  ];
 
   const currentQuestion = questions[currentQuestionIndex];
 
@@ -85,6 +112,10 @@ function Quis3() {
     setSelectedAnswer(null);
     setCorrectAnswersCount(0);
     setQuizFinished(false);
+  };
+
+  const goBackToQuestions = () => {
+    navigate('/questions'); // Navigasi ke halaman Questions
   };
 
   return (
@@ -121,6 +152,9 @@ function Quis3() {
           </p>
           <button className="btn restart-quiz" onClick={restartQuiz}>
             Restart Quiz
+          </button>
+          <button className="btn back-to-questions" onClick={goBackToQuestions}>
+            Back to Soal Latihan
           </button>
         </div>
       )}

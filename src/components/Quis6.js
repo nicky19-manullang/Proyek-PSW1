@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/Quis.css';
 
 function Quis6() {
@@ -7,59 +8,109 @@ function Quis6() {
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
   const [quizFinished, setQuizFinished] = useState(false);
 
+  const navigate = useNavigate();
   const questions = [
     {
-      question: "Complete the sentence with the correct modal: You ___ (not/smoke) in this area. It's prohibited.",
-      options: ['A. cannot', 'B. may not', 'C. must not', 'D. should not'],
-      correctAnswer: 'C',
-    },
-    {
-      question: "Which modal expresses a strong obligation?",
-      options: ['A. Can', 'B. May', 'C. Must', 'D. Might'],
-      correctAnswer: 'C',
-    },
-    {
-      question: "Choose the correct sentence:",
-      options: ['A. She can to swim well.', 'B. She can swim well.', 'C. She can swimming well.', 'D. She can swims well.'],
-      correctAnswer: 'B',
-    },
-    {
-        question: "Translate into English: Dia mungkin akan datang ke pesta.",
-        options: ['A. He can come to the party.', 'B. He might come to the party.', 'C. He must come to the party.', 'D. He should come to the party.'],
-        correctAnswer: 'B',
-    },
-    {
-        question: "What is the correct modal to ask for permission formally?",
-        options: ['A. Shall', 'B. Can', 'C. May', 'D. Will'],
-        correctAnswer: 'C',
-    },
-    {
-        question: "Identify the error in the sentence: You should to apologize to her.",
-        options: ['A. You', 'B. should', 'C. to apologize', 'D. to her'],
-        correctAnswer: 'C',
-    },
-    {
-        question: "Complete the sentence: We ___ (go) to the park if it doesn’t rain tomorrow.",
-        options: ['A. will', 'B. can', 'C. must', 'D. may'],
+        question: "1. Which tense is used to express a habitual action or general fact?",
+        options: [
+            'A. Present Simple',
+            'B. Present Continuous',
+            'C. Past Simple',
+            'D. Future Simple'
+        ],
         correctAnswer: 'A',
     },
     {
-        question: "Which modal expresses ability in the past?",
-        options: ['A. Could', 'B. Can', 'C. Must', 'D. Should'],
+        question: "2. What is the formula for Present Continuous tense?",
+        options: [
+            'A. Subject + Verb 1',
+            'B. Subject + is/am/are + Verb-ing',
+            'C. Subject + Verb 2',
+            'D. Subject + was/were + Verb-ing'
+        ],
+        correctAnswer: 'B',
+    },
+    {
+        question: "3. Which of the following sentences is in Past Simple tense?",
+        options: [
+            'A. She walks to school every day.',
+            'B. She is studying English now.',
+            'C. She went to the market yesterday.',
+            'D. She will visit her grandmother tomorrow.'
+        ],
+        correctAnswer: 'C',
+    },
+    {
+        question: "4. What tense is used in this sentence: 'They are going to the park tomorrow'?",
+        options: [
+            'A. Present Simple',
+            'B. Present Continuous',
+            'C. Past Simple',
+            'D. Future Simple'
+        ],
+        correctAnswer: 'B',
+    },
+    {
+        question: "5. Which tense uses 'was/were + Verb-ing' in its structure?",
+        options: [
+            'A. Present Simple',
+            'B. Past Simple',
+            'C. Past Continuous',
+            'D. Future Simple'
+        ],
+        correctAnswer: 'C',
+    },
+    {
+        question: "6. Identify the tense: 'She will visit her grandmother tomorrow.'",
+        options: [
+            'A. Present Continuous',
+            'B. Future Simple',
+            'C. Past Simple',
+            'D. Past Continuous'
+        ],
+        correctAnswer: 'B',
+    },
+    {
+        question: "7. What is the correct formula for Past Simple tense?",
+        options: [
+            'A. Subject + Verb 1',
+            'B. Subject + Verb 2',
+            'C. Subject + will + Verb 1',
+            'D. Subject + is/am/are + Verb-ing'
+        ],
+        correctAnswer: 'B',
+    },
+    {
+        question: "8. Which sentence is in Present Continuous tense?",
+        options: [
+            'A. The sun rises in the east.',
+            'B. She is reading a book now.',
+            'C. They played football last week.',
+            'D. She will travel to Bali next month.'
+        ],
+        correctAnswer: 'B',
+    },
+    {
+        question: "9. In which tense is this sentence: 'She was reading a book when the phone rang'?",
+        options: [
+            'A. Past Continuous',
+            'B. Past Simple',
+            'C. Present Continuous',
+            'D. Future Simple'
+        ],
         correctAnswer: 'A',
     },
     {
-        question: "Translate into English: Kamu seharusnya memakan lebih banyak sayuran.",
-        options: ['A. You can eat more vegetables.', 'B. You should eat more vegetables.', 'C. You must eat more vegetables.', 'D. You might eat more vegetables.'],
+        question: "10. Which tense is used to describe an interrupted action in the past?",
+        options: [
+            'A. Present Continuous',
+            'B. Past Continuous',
+            'C. Past Simple',
+            'D. Future Simple'
+        ],
         correctAnswer: 'B',
     },
-    {
-        question: "Complete the question: ___ I help you with your homework?",
-        options: ['A. May', 'B. Can', 'C. Should', 'D. Must'],
-        correctAnswer: 'B',
-    },
-
-  ];
+];
 
   const currentQuestion = questions[currentQuestionIndex];
 
@@ -85,6 +136,10 @@ function Quis6() {
     setSelectedAnswer(null);
     setCorrectAnswersCount(0);
     setQuizFinished(false);
+  };
+
+  const goBackToQuestions = () => {
+    navigate('/questions'); // Navigasi ke halaman Questions
   };
 
   return (
@@ -121,6 +176,9 @@ function Quis6() {
           </p>
           <button className="btn restart-quiz" onClick={restartQuiz}>
             Restart Quiz
+          </button>
+          <button className="btn back-to-questions" onClick={goBackToQuestions}>
+            Back to Soal Latihan
           </button>
         </div>
       )}

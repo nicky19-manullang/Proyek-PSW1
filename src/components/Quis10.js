@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Quis.css';
 
-function Quis5() {
+function Quis10() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
@@ -11,88 +11,106 @@ function Quis5() {
   const navigate = useNavigate();
   const questions = [
     {
-        question: "1. What is the function of coordinating conjunctions?",
+        question: "1. What is the purpose of using a comma in a sentence?",
         options: [
-            'A. To connect a main clause with a dependent clause',
-            'B. To connect two clauses that are equal',
-            'C. To introduce a dependent clause',
-            'D. To modify nouns or verbs'
+            'A. To end a declarative sentence',
+            'B. To separate elements in a list or clauses',
+            'C. To form a question',
+            'D. To show emotion'
         ],
         correctAnswer: 'B',
     },
     {
-        question: "2. Which of the following is a coordinating conjunction?",
-        options: ['A. Because', 'B. When', 'C. And', 'D. Although'],
-        correctAnswer: 'C',
+        question: "2. Which sentence uses a comma correctly?",
+        options: [
+            'A. She is reading a book, now.',
+            'B. I bought apples, bananas, and oranges.',
+            'C. I, am going to the store.',
+            'D. They are going to the park tomorrow,'
+        ],
+        correctAnswer: 'B',
     },
     {
-        question: "3. What is the function of subordinating conjunctions?",
+        question: "3. What punctuation mark is used to end a declarative sentence?",
         options: [
-            'A. To connect a main clause with a dependent clause',
-            'B. To connect two equal clauses',
-            'C. To express contrast between ideas',
+            'A. Comma',
+            'B. Exclamation mark',
+            'C. Question mark',
+            'D. Period'
+        ],
+        correctAnswer: 'D',
+    },
+    {
+        question: "4. Which sentence uses a period correctly?",
+        options: [
+            'A. She is studying for the exam.',
+            'B. What is your name?',
+            'C. Stop!',
+            'D. Wow, that’s amazing!'
+        ],
+        correctAnswer: 'A',
+    },
+    {
+        question: "5. What is the function of a question mark?",
+        options: [
+            'A. To show surprise',
+            'B. To separate clauses',
+            'C. To end a declarative sentence',
             'D. To indicate a question'
         ],
-        correctAnswer: 'A',
+        correctAnswer: 'D',
     },
     {
-        question: "4. Which sentence contains a coordinating conjunction?",
+        question: "6. Which of the following is a correct use of a question mark?",
         options: [
-            'A. I stayed home because it was raining.',
-            'B. I wanted to go outside, but it was raining.',
-            'C. Although it was sunny, I stayed inside.',
-            'D. If it rains, we will cancel the picnic.'
+            'A. I like ice cream, do you?',
+            'B. How are you?',
+            'C. Stop!',
+            'D. He is coming to the party, right?'
         ],
         correctAnswer: 'B',
     },
     {
-        question: "5. Which of the following is a subordinating conjunction?",
-        options: ['A. But', 'B. Or', 'C. Although', 'D. And'],
+        question: "7. What is the function of an exclamation mark?",
+        options: [
+            'A. To end a question',
+            'B. To express strong emotion or a command',
+            'C. To separate clauses',
+            'D. To make a statement'
+        ],
+        correctAnswer: 'B',
+    },
+    {
+        question: "8. Which sentence uses an exclamation mark correctly?",
+        options: [
+            'A. She is studying hard!',
+            'B. Are you coming to the party?',
+            'C. He is reading a book.',
+            'D. I will go to the store.'
+        ],
+        correctAnswer: 'A',
+    },
+    {
+        question: "9. Which of the following sentences should end with a period?",
+        options: [
+            'A. What time is it?',
+            'B. Hurry up!',
+            'C. I went to the store.',
+            'D. Wow, that’s incredible!'
+        ],
         correctAnswer: 'C',
     },
     {
-        question: "6. What does the subordinating conjunction 'because' indicate?",
+        question: "10. Which punctuation mark is used to separate items in a list?",
         options: [
-            'A. A cause or reason',
-            'B. A time relationship',
-            'C. A contrast',
-            'D. A choice between options'
+            'A. Question mark',
+            'B. Exclamation mark',
+            'C. Comma',
+            'D. Period'
         ],
-        correctAnswer: 'A',
-    },
-    {
-        question: "7. Identify the subordinating conjunction in this sentence: 'I will go to the park if it stops raining.'",
-        options: ['A. If', 'B. Go', 'C. Will', 'D. Stops'],
-        correctAnswer: 'A',
-    },
-    {
-        question: "8. Which sentence correctly uses a subordinating conjunction?",
-        options: [
-            'A. I went to the store, and I bought milk.',
-            'B. She didn’t come to the party because she was sick.',
-            'C. We could go to the beach or stay home.',
-            'D. The sun was shining, but it was cold.'
-        ],
-        correctAnswer: 'B',
-    },
-    {
-        question: "9. What is the coordinating conjunction in this sentence: 'I want to go to the beach, but it is raining.'",
-        options: ['A. Want', 'B. To', 'C. But', 'D. Is'],
         correctAnswer: 'C',
-    },
-    {
-        question: "10. How do conjunctions improve sentence structure?",
-        options: [
-            'A. By making sentences shorter',
-            'B. By clarifying relationships between ideas',
-            'C. By adding more verbs to a sentence',
-            'D. By separating unrelated ideas'
-        ],
-        correctAnswer: 'B',
     },
 ];
-
-
 
   const currentQuestion = questions[currentQuestionIndex];
 
@@ -168,4 +186,4 @@ function Quis5() {
   );
 }
 
-export default Quis5;
+export default Quis10;

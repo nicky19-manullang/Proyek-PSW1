@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Quis.css';
 
-function Quis5() {
+function Quis8() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
@@ -11,87 +11,91 @@ function Quis5() {
   const navigate = useNavigate();
   const questions = [
     {
-        question: "1. What is the function of coordinating conjunctions?",
+        question: "1. Which type of adverb is used to indicate when an action is performed?",
         options: [
-            'A. To connect a main clause with a dependent clause',
-            'B. To connect two clauses that are equal',
-            'C. To introduce a dependent clause',
-            'D. To modify nouns or verbs'
+            'A. Adverb of Place',
+            'B. Adverb of Manner',
+            'C. Adverb of Time',
+            'D. Adverb of Frequency'
         ],
-        correctAnswer: 'B',
-    },
-    {
-        question: "2. Which of the following is a coordinating conjunction?",
-        options: ['A. Because', 'B. When', 'C. And', 'D. Although'],
         correctAnswer: 'C',
     },
     {
-        question: "3. What is the function of subordinating conjunctions?",
+        question: "2. Which of the following is an example of an adverb of time?",
+        options: ['A. Quickly', 'B. In the park', 'C. Tomorrow', 'D. Carefully'],
+        correctAnswer: 'C',
+    },
+    {
+        question: "3. What is the formula for using an adverb of place?",
         options: [
-            'A. To connect a main clause with a dependent clause',
-            'B. To connect two equal clauses',
-            'C. To express contrast between ideas',
-            'D. To indicate a question'
+            'A. Subject + Verb + Adverb of Place',
+            'B. Subject + Adverb of Place + Verb',
+            'C. Adverb of Place + Subject + Verb',
+            'D. Subject + Verb-ing + Adverb of Place'
         ],
         correctAnswer: 'A',
     },
     {
-        question: "4. Which sentence contains a coordinating conjunction?",
+        question: "4. Which sentence correctly uses an adverb of place?",
         options: [
-            'A. I stayed home because it was raining.',
-            'B. I wanted to go outside, but it was raining.',
-            'C. Although it was sunny, I stayed inside.',
-            'D. If it rains, we will cancel the picnic.'
-        ],
-        correctAnswer: 'B',
-    },
-    {
-        question: "5. Which of the following is a subordinating conjunction?",
-        options: ['A. But', 'B. Or', 'C. Although', 'D. And'],
-        correctAnswer: 'C',
-    },
-    {
-        question: "6. What does the subordinating conjunction 'because' indicate?",
-        options: [
-            'A. A cause or reason',
-            'B. A time relationship',
-            'C. A contrast',
-            'D. A choice between options'
+            'A. She left her bag on the table.',
+            'B. She called me yesterday.',
+            'C. She speaks fluently.',
+            'D. He completed the project carefully.'
         ],
         correctAnswer: 'A',
     },
     {
-        question: "7. Identify the subordinating conjunction in this sentence: 'I will go to the park if it stops raining.'",
-        options: ['A. If', 'B. Go', 'C. Will', 'D. Stops'],
-        correctAnswer: 'A',
-    },
-    {
-        question: "8. Which sentence correctly uses a subordinating conjunction?",
+        question: "5. Which type of adverb answers the question 'How?'?",
         options: [
-            'A. I went to the store, and I bought milk.',
-            'B. She didn’t come to the party because she was sick.',
-            'C. We could go to the beach or stay home.',
-            'D. The sun was shining, but it was cold.'
+            'A. Adverb of Time',
+            'B. Adverb of Place',
+            'C. Adverb of Manner',
+            'D. Adverb of Frequency'
         ],
-        correctAnswer: 'B',
-    },
-    {
-        question: "9. What is the coordinating conjunction in this sentence: 'I want to go to the beach, but it is raining.'",
-        options: ['A. Want', 'B. To', 'C. But', 'D. Is'],
         correctAnswer: 'C',
     },
     {
-        question: "10. How do conjunctions improve sentence structure?",
+        question: "6. Identify the adverb in the sentence: 'The children are playing in the garden.'",
+        options: ['A. The children', 'B. Playing', 'C. In the garden', 'D. Are'],
+        correctAnswer: 'C',
+    },
+    {
+        question: "7. Which sentence contains an adverb of manner?",
         options: [
-            'A. By making sentences shorter',
-            'B. By clarifying relationships between ideas',
-            'C. By adding more verbs to a sentence',
-            'D. By separating unrelated ideas'
+            'A. She danced beautifully.',
+            'B. The meeting is at 5 PM.',
+            'C. They are in the library.',
+            'D. I will visit you tomorrow.'
         ],
+        correctAnswer: 'A',
+    },
+    {
+        question: "8. Where can an adverb of time be placed in a sentence?",
+        options: [
+            'A. Only at the beginning',
+            'B. Only at the end',
+            'C. At the beginning, middle, or end',
+            'D. Only in the middle'
+        ],
+        correctAnswer: 'C',
+    },
+    {
+        question: "9. What is the adverb of manner in the sentence: 'He completed the project carefully'?",
+        options: ['A. Completed', 'B. Carefully', 'C. Project', 'D. He'],
         correctAnswer: 'B',
+    },
+    {
+        question: "10. Which sentence demonstrates the correct use of an adverb of time?",
+        options: [
+            'A. She speaks fluently.',
+            'B. The children are in the garden.',
+            'C. I called him yesterday.',
+            'D. She left her bag on the table.'
+        ],
+        correctAnswer: 'C',
     },
 ];
-
 
 
   const currentQuestion = questions[currentQuestionIndex];
@@ -168,4 +172,4 @@ function Quis5() {
   );
 }
 
-export default Quis5;
+export default Quis8;

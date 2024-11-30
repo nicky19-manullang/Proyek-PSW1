@@ -1,142 +1,70 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fc;
+}
+
 .quiz-container {
-  margin: 20px;
-  font-family: Arial, sans-serif;
+  padding: 20px;
 }
 
 .semester-section {
-  margin-bottom: 40px; 
+  margin-bottom: 40px;
 }
 
-h2 {
-  color: #5a4fcf; 
-  margin-bottom: 20px;
+.semester-section h2 {
+  font-size: 28px;
+  color: #4b0082;
   text-align: center;
+  margin-bottom: 20px;
 }
 
-.slick-list {
-  display: flex;
-  gap: 30px; /* Jarak antar kartu di slider */
-  padding: 0 10px;
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
 }
 
-.slick-slide {
-  display: flex;
-  justify-content: center; /* Pusatkan isi kartu */
-}
-
-/* Kartu Materi */
 .topic-card {
-  background: #ffffff;
-  border: 1px solid #ddd;
-  border-radius: 10px;
+  background: #fff;
+  border: 2px solid #dcdcdc;
+  border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  padding: 0px;
-  width: 150px; /* Lebar tetap untuk kartu */
-  height: 300px; /* Tinggi tetap untuk menjaga konsistensi */
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start; /* Mulai isi dari atas */
-  transition: transform 0.3s ease-in-out;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .topic-card:hover {
-  transform: translateY(-5px); /* Efek hover: naik sedikit */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* Gambar di dalam kartu */
 .topic-image {
-  width: 90%;
-  height: 150px;
+  width: 181px;
+  height: 116px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-/* Judul Materi */
 .topic-title {
-  font-size: 16px;
-  font-weight: bold;
-  color: #333; /* Warna teks */
-  margin: 15px 0; /* Jarak antara gambar dan judul */
-}
-
-
-/* Navigasi (panah) di slider */
-.custom-arrow {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background: white;
-  border-radius: 50%;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  z-index: 2;
-}
-
-.prev-arrow {
-  left: -10px;
-}
-
-.next-arrow {
-  right: -10px;
-}
-
-.custom-arrow span {
-  font-size: 20px;
-  font-weight: bold;
-  color: #5a4fcf;
-}
-
-.custom-arrow:hover {
-  background: #f0f0f0; /* Efek hover panah */
-}
-
-.start-quiz-button-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
+  font-size: 18px;
+  color: #4b0082;
+  margin-bottom: 10px;
 }
 
 .topic-button {
-  background: #5a4fcf; /* Warna ungu */
+  padding: 10px 15px;
+  background-color: #4b0082;
   color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 20px;
+  border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
-  transition: 0.3s ease-in-out;
+  transition: background-color 0.3s ease;
 }
 
 .topic-button:hover {
-  background: #4a3ec1; /* Warna ungu lebih gelap saat hover */
-}
-
-/* Responsif untuk layar kecil */
-@media (max-width: 768px) {
-  .slick-list {
-    gap: 10px; /* Kurangi jarak antar kartu untuk layar kecil */
-  }
-
-  .topic-card {
-    width: 90%; /* Lebar kartu mengikuti layar */
-    height: auto; /* Tinggi otomatis */
-  }
-
-  .topic-image {
-    height: 100px; /* Gambar lebih kecil di layar kecil */
-  }
-
-  .topic-title {
-    font-size: 14px; /* Ukuran teks lebih kecil */
-  }
-
-  .topic-button {
-    padding: 8px 12px; /* Ukuran tombol lebih kecil */
-  }
+  background-color: #663399;
 }

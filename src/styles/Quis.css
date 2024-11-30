@@ -1,118 +1,121 @@
 .section {
-    padding: 20px;
-    background-color: #f8f9fc;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .section-title {
-    font-size: 24px;
-    color: #4b0082;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .question-card {
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    padding: 20px;
-    max-width: 600px;
-    text-align: center;
-  }
-  
-  .question-text {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
-  .options-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .option {
-    background: #e6e6fa;
-    padding: 10px 15px;
-    margin: 10px 0;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .option:hover {
-    background-color: #d8bfd8;
-  }
-  
-  .option.selected {
-    background-color: #9370db;
-    color: white;
-  }
-  
-  .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #4b0082;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #663399;
-  }
-  
-  .result-card {
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
-    padding: 20px;
-    max-width: 600px;
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .result-card h3 {
-    font-size: 24px;
-    color: #4b0082;
-    margin-bottom: 10px;
-  }
-  
-  .result-card p {
-    font-size: 18px;
-    color: #333;
-  }
-  
-  .result-card .score {
-    font-weight: bold;
-    color: #28a745;
-  }
-  
-  .result-card .total-questions {
-    font-weight: bold;
-    color: #333;
-  }
-  
-  .btn.restart-quiz {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #4b0082;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn.restart-quiz:hover {
-    background-color: #663399;
-  }
-  
+  padding: 20px;
+  background-color: #f8f9fc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 24px;
+  color: #4b0082;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.question-card {
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 600px;
+  text-align: center;
+}
+
+.question-text {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.options-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.option {
+  background: #e6e6fa;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.option:hover {
+  background-color: #d8bfd8;
+}
+
+.option.selected {
+  background-color: #9370db;
+  color: white;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4b0082;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #663399;
+}
+
+.result-card {
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 600px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.result-card h3 {
+  font-size: 24px;
+  color: #4b0082;
+  margin-bottom: 10px;
+}
+
+.result-card p {
+  font-size: 18px;
+  color: #333;
+}
+
+.result-card .score {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.result-card .total-questions {
+  font-weight: bold;
+  color: #333;
+}
+
+.result-card .btn {
+  margin: 10px 5px; 
+}
+
+.btn.restart-quiz {
+  background-color: #4b0082;
+}
+
+.btn.restart-quiz:hover {
+  background-color: #663399;
+}
+
+.btn.back-to-questions {
+  background-color: #9370db; 
+}
+
+.btn.back-to-questions:hover {
+  background-color: #4b0082; 
+}

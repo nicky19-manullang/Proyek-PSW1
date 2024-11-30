@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Quis.css';
 
-function Quis5() {
+function Quis9() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
@@ -11,88 +11,101 @@ function Quis5() {
   const navigate = useNavigate();
   const questions = [
     {
-        question: "1. What is the function of coordinating conjunctions?",
+        question: "1. What is a prepositional phrase?",
         options: [
-            'A. To connect a main clause with a dependent clause',
-            'B. To connect two clauses that are equal',
-            'C. To introduce a dependent clause',
-            'D. To modify nouns or verbs'
+            'A. A phrase that functions as a noun',
+            'B. A phrase that includes an auxiliary verb and main verb',
+            'C. A phrase that begins with a preposition and ends with a noun or pronoun',
+            'D. A phrase that modifies a noun'
         ],
-        correctAnswer: 'B',
-    },
-    {
-        question: "2. Which of the following is a coordinating conjunction?",
-        options: ['A. Because', 'B. When', 'C. And', 'D. Although'],
         correctAnswer: 'C',
     },
     {
-        question: "3. What is the function of subordinating conjunctions?",
+        question: "2. Which of the following is an example of a prepositional phrase?",
         options: [
-            'A. To connect a main clause with a dependent clause',
-            'B. To connect two equal clauses',
-            'C. To express contrast between ideas',
-            'D. To indicate a question'
+            'A. In the park',
+            'B. The beautiful garden',
+            'C. Has been studying',
+            'D. She bought a pair of shoes'
         ],
         correctAnswer: 'A',
     },
     {
-        question: "4. Which sentence contains a coordinating conjunction?",
+        question: "3. What is the formula for a nominal phrase?",
         options: [
-            'A. I stayed home because it was raining.',
-            'B. I wanted to go outside, but it was raining.',
-            'C. Although it was sunny, I stayed inside.',
-            'D. If it rains, we will cancel the picnic.'
+            'A. Preposition + Object',
+            'B. Determiner + Modifier + Noun',
+            'C. Auxiliary Verb + Main Verb',
+            'D. Verb + Object'
         ],
         correctAnswer: 'B',
     },
     {
-        question: "5. Which of the following is a subordinating conjunction?",
-        options: ['A. But', 'B. Or', 'C. Although', 'D. And'],
+        question: "4. Which sentence contains a nominal phrase?",
+        options: [
+            'A. She is sitting on the chair.',
+            'B. She bought a pair of shoes.',
+            'C. They have finished their homework.',
+            'D. The book is under the table.'
+        ],
+        correctAnswer: 'B',
+    },
+    {
+        question: "5. Which of the following is an example of a verbal phrase?",
+        options: [
+            'A. She is sitting on the chair.',
+            'B. They have finished their homework.',
+            'C. The beautiful garden is my favorite place.',
+            'D. The children played happily.'
+        ],
+        correctAnswer: 'B',
+    },
+    {
+        question: "6. What is the role of a nominal phrase in a sentence?",
+        options: [
+            'A. To function as a verb',
+            'B. To modify adjectives',
+            'C. To function as a noun',
+            'D. To indicate a preposition'
+        ],
         correctAnswer: 'C',
     },
     {
-        question: "6. What does the subordinating conjunction 'because' indicate?",
+        question: "7. Identify the prepositional phrase in this sentence: 'She is sitting on the chair.'",
+        options: ['A. She is sitting', 'B. On the chair', 'C. Sitting on', 'D. The chair'],
+        correctAnswer: 'B',
+    },
+    {
+        question: "8. Which sentence contains a verb phrase?",
         options: [
-            'A. A cause or reason',
-            'B. A time relationship',
-            'C. A contrast',
-            'D. A choice between options'
+            'A. She is writing a letter.',
+            'B. The children played happily.',
+            'C. The man in the blue jacket is my uncle.',
+            'D. The sun rises in the east.'
         ],
         correctAnswer: 'A',
     },
     {
-        question: "7. Identify the subordinating conjunction in this sentence: 'I will go to the park if it stops raining.'",
-        options: ['A. If', 'B. Go', 'C. Will', 'D. Stops'],
+        question: "9. What is the formula for a verb phrase?",
+        options: [
+            'A. Preposition + Noun',
+            'B. Auxiliary Verb + Main Verb',
+            'C. Determiner + Modifier + Noun',
+            'D. Subject + Verb'
+        ],
+        correctAnswer: 'B',
+    },
+    {
+        question: "10. Which sentence demonstrates the use of a prepositional phrase at the beginning?",
+        options: [
+            'A. At the park, the children played happily.',
+            'B. She is writing a letter.',
+            'C. The children played happily at the park.',
+            'D. The beautiful garden is my favorite place.'
+        ],
         correctAnswer: 'A',
-    },
-    {
-        question: "8. Which sentence correctly uses a subordinating conjunction?",
-        options: [
-            'A. I went to the store, and I bought milk.',
-            'B. She didn’t come to the party because she was sick.',
-            'C. We could go to the beach or stay home.',
-            'D. The sun was shining, but it was cold.'
-        ],
-        correctAnswer: 'B',
-    },
-    {
-        question: "9. What is the coordinating conjunction in this sentence: 'I want to go to the beach, but it is raining.'",
-        options: ['A. Want', 'B. To', 'C. But', 'D. Is'],
-        correctAnswer: 'C',
-    },
-    {
-        question: "10. How do conjunctions improve sentence structure?",
-        options: [
-            'A. By making sentences shorter',
-            'B. By clarifying relationships between ideas',
-            'C. By adding more verbs to a sentence',
-            'D. By separating unrelated ideas'
-        ],
-        correctAnswer: 'B',
     },
 ];
-
-
 
   const currentQuestion = questions[currentQuestionIndex];
 
@@ -168,4 +181,4 @@ function Quis5() {
   );
 }
 
-export default Quis5;
+export default Quis9;
