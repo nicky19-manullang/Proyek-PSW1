@@ -2,10 +2,36 @@ import React, { useState, useEffect } from 'react';
 import '../styles/Vocabulary.css';
 
 function Vocabulary() {
+  const preloadWords = [
+    { word: 'abandon', definition: 'To leave completely and finally.', example: 'He decided to abandon his car in the middle of the road.', category: 'verb' },
+    { word: 'benevolent', definition: 'Well meaning and kindly.', example: 'She had a benevolent smile.', category: 'adjective' },
+    { word: 'candid', definition: 'Truthful and straightforward.', example: 'He was candid about the risks involved.', category: 'adjective' },
+    { word: 'dauntless', definition: 'Showing fearlessness and determination.', example: 'The dauntless explorer climbed the mountain.', category: 'adjective' },
+    { word: 'eloquent', definition: 'Fluent or persuasive in speaking or writing.', example: 'Her speech was eloquent and inspiring.', category: 'adjective' },
+    { word: 'frivolous', definition: 'Not having any serious purpose or value.', example: 'He made a frivolous comment during the meeting.', category: 'adjective' },
+    { word: 'gregarious', definition: 'Fond of company; sociable.', example: 'She is a gregarious person who loves parties.', category: 'adjective' },
+    { word: 'haphazard', definition: 'Lacking any obvious principle of organization.', example: 'The books were stacked in a haphazard fashion.', category: 'adjective' },
+    { word: 'inquisitive', definition: 'Curious or inquiring.', example: 'The child was very inquisitive about everything around him.', category: 'adjective' },
+    { word: 'jubilant', definition: 'Feeling or expressing great happiness and triumph.', example: 'The team was jubilant after winning the match.', category: 'adjective' },
+    { word: 'keen', definition: 'Having or showing eagerness or enthusiasm.', example: 'She was keen to start her new job.', category: 'adjective' },
+    { word: 'lucid', definition: 'Expressed clearly; easy to understand.', example: 'The professor gave a lucid explanation of the theory.', category: 'adjective' },
+    { word: 'meticulous', definition: 'Showing great attention to detail; very careful and precise.', example: 'She kept meticulous records of her work.', category: 'adjective' },
+    { word: 'novice', definition: 'A person new to or inexperienced in a field or situation.', example: 'He is a novice when it comes to cooking.', category: 'noun' },
+    { word: 'obstinate', definition: 'Stubbornly refusing to change one’s opinion or chosen course of action.', example: 'The child remained obstinate in his decision.', category: 'adjective' },
+    { word: 'prudent', definition: 'Acting with or showing care and thought for the future.', example: 'It was prudent to save some money for emergencies.', category: 'adjective' },
+    { word: 'quaint', definition: 'Attractively unusual or old-fashioned.', example: 'The town is full of quaint little shops.', category: 'adjective' },
+    { word: 'robust', definition: 'Strong and healthy; vigorous.', example: 'He is in robust health.', category: 'adjective' },
+    { word: 'serene', definition: 'Calm, peaceful, and untroubled; tranquil.', example: 'She enjoyed the serene beauty of the lake.', category: 'adjective' },
+    { word: 'tedious', definition: 'Too long, slow, or dull; tiresome or monotonous.', example: 'The journey was long and tedious.', category: 'adjective' },
+    { word: 'ubiquitous', definition: 'Present, appearing, or found everywhere.', example: 'Smartphones have become ubiquitous in modern life.', category: 'adjective' },
+    { word: 'vigilant', definition: 'Keeping careful watch for possible danger or difficulties.', example: 'The guards remained vigilant throughout the night.', category: 'adjective' },
+    { word: 'wary', definition: 'Feeling or showing caution about possible dangers or problems.', example: 'She was wary of strangers.', category: 'adjective' },
+    { word: 'zealous', definition: 'Having or showing great energy or enthusiasm in pursuit of a cause or objective.', example: 'He was zealous in his efforts to promote the product.', category: 'adjective' },
+  ];
+
   const [words, setWords] = useState(() => {
-    // Load data dari localStorage jika ada
     const savedWords = localStorage.getItem('vocabularyWords');
-    return savedWords ? JSON.parse(savedWords) : [];
+    return savedWords ? JSON.parse(savedWords) : preloadWords;
   });
 
   const [isAdding, setIsAdding] = useState(false);
@@ -14,7 +40,6 @@ function Vocabulary() {
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    // Simpan data ke localStorage setiap kali `words` berubah
     localStorage.setItem('vocabularyWords', JSON.stringify(words));
   }, [words]);
 
