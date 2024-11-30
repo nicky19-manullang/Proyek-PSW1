@@ -4,7 +4,6 @@ import "../styles/MainContent.css";
 
 function MainContent() {
   const navigate = useNavigate();
-
   // Fungsi untuk menavigasi ke halaman Materi
   const goToMateriPage = () => {
     navigate("/materi");
