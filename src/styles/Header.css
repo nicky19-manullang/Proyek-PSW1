@@ -1,31 +1,33 @@
-/* Header Styling */
+/* Header */
 .header {
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-between;
   align-items: center;
-  padding: 0px 25px;
+  padding: 10px 25px;
   background: linear-gradient(to right, #6a11cb, #2575fc);
   color: white;
-  flex-wrap: wrap; 
-  gap: 10px; 
+  flex-wrap: nowrap;
+  gap: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .header .logo-container {
   display: flex;
   align-items: center;
-  padding-top: 0%;
+  padding-top: 0;
 }
 
 .hero {
   width: 70px;
   height: auto;
   margin-right: 20px;
-  border-radius: 50%; 
+  border-radius: 50%;
   border: 3px solid white;
 }
 
-/* Hamburger Menu Button */
 .hamburger {
   display: flex;
   flex-direction: column;
@@ -99,36 +101,11 @@ nav ul li a:hover {
   transform: scale(1.1);
 }
 
-/* Main Styling */
-main {
-  text-align: center;
-  padding: 50px 20px;
-  background: linear-gradient(135deg, #a8edea, #fed6e3);
-  color: #333;
-  border-top: 5px solid #2575fc;
-  border-bottom: 5px solid #6a11cb;
-}
-
-main h1 {
-  font-size: 48px;
-  font-weight: bold;
-  animation: fadeIn 1.5s ease;
-  color: #2575fc;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-main p {
-  font-size: 18px;
-  margin-top: 10px;
-  color: #444;
-}
-
-/* Responsivitas */
+/* Responsif */
 @media (max-width: 768px) {
   .header {
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
-    text-align: center;
     gap: 10px;
   }
 
@@ -144,32 +121,21 @@ main p {
   }
 
   .nav-menu {
-    display: none;
     width: 100%;
-    position: static; 
+    position: static;
     flex-direction: column;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
     gap: 8px;
   }
 
   nav ul li a {
     font-size: 16px;
   }
-
-  main h1 {
-    font-size: 36px;
-  }
-
-  main p {
-    font-size: 16px;
-  }
 }
 
 @media (max-width: 480px) {
   .header {
-    flex-direction: column; 
-    align-items: center; 
-    text-align: center;
+    flex-direction: column;
+    align-items: center;
     gap: 8px;
   }
 
@@ -183,19 +149,7 @@ main p {
     gap: 8px;
   }
 
-  .nav-menu.active {
-    position: relative;
-  }
-
   nav ul li a {
-    font-size: 14px;
-  }
-
-  main h1 {
-    font-size: 28px;
-  }
-
-  main p {
     font-size: 14px;
   }
 }
