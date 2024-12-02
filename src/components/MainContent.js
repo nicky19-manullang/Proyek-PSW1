@@ -46,27 +46,27 @@ function MainContent() {
           <tbody>
             <tr>
               <td>Monday</td>
-              <td>Can and Could</td>
+              <td>Sentence Structure</td>
               <td>10:00 - 11:00</td>
             </tr>
             <tr>
               <td>Tuesday</td>
-              <td>Asking and Giving Opinion</td>
+              <td>Type of Sentence</td>
               <td>10:00 - 11:00</td>
             </tr>
             <tr>
               <td>Wednesday</td>
-              <td>Future Perfect Tense</td>
+              <td>Classification of Santence</td>
               <td>10:00 - 11:00</td>
             </tr>
             <tr>
               <td>Thursday</td>
-              <td>Personal Letter</td>
+              <td>Type of Clauses</td>
               <td>10:00 - 11:00</td>
             </tr>
             <tr>
               <td>Friday</td>
-              <td>Analytical Exposition</td>
+              <td>Santence Conector</td>
               <td>10:00 - 11:00</td>
             </tr>
           </tbody>

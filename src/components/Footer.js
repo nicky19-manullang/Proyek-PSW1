@@ -33,7 +33,7 @@ function Footer() {
             <a href="https://wa.me/yourphonenumber" target="_blank" rel="noopener noreferrer" className="social-link">
               <img src="/images/wa1.jpeg" alt="WhatsApp" className="social-logo" />
             </a>
-            <a href="https://instagram.com/yourinstagram" target="_blank" rel="noopener noreferrer" className="social-link">
+            <a href="https://www.instagram.com/angiesolitao/" target="_blank" rel="noopener noreferrer" className="social-link">
               <img src="/images/ig2.jpeg" alt="Instagram" className="social-logo" />
             </a>
           </div>
