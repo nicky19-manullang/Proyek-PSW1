@@ -32,6 +32,7 @@ function Header() {
           <li><Link to="/questions" onClick={toggleMenu}>Soal Latihan</Link></li>
           <li><Link to="/downloads" onClick={toggleMenu}>Unduh Materi</Link></li>
           <li><Link to="/materi" onClick={toggleMenu}>Materi</Link></li>
+          <li><Link to="/tipstrik" onClick={toggleMenu}>Tips & Trik</Link></li>
         </ul>
       </nav>
     </header>

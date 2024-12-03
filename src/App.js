@@ -16,6 +16,7 @@ import Quis8 from './components/Quis8';
 import Quis9 from './components/Quis9';
 import Quis10 from './components/Quis10';
 import Downloads from './components/Downloads';
+import TipsTrik from "./components/Tips&Trik";
 import Materi from './components/Materi';
 import Modul1 from "./components/Modul1";
 import Modul2 from "./components/Modul2";
@@ -59,6 +60,7 @@ function App() {
           <Route path="/modul8" element={<Modul8 />} />
           <Route path="/modul9" element={<Modul9 />} />
           <Route path="/modul10" element={<Modul10 />} />
+          <Route path="/tipstrik" element={<TipsTrik/>} />
         </Routes>
         <Footer />
       </div>
