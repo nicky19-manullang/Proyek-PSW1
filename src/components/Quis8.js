@@ -6,6 +6,7 @@ function Quis8() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
+  const [showExplanation, setShowExplanation] = useState(false);
   const [quizFinished, setQuizFinished] = useState(false);
 
   const navigate = useNavigate();
@@ -19,11 +20,13 @@ function Quis8() {
             'D. Adverb of Frequency'
         ],
         correctAnswer: 'C',
+        explanation: "An adverb of time answers the question 'When?' and indicates the timing of an action, such as 'yesterday' or 'tomorrow'."
     },
     {
         question: "2. Which of the following is an example of an adverb of time?",
         options: ['A. Quickly', 'B. In the park', 'C. Tomorrow', 'D. Carefully'],
         correctAnswer: 'C',
+        explanation: "'Tomorrow' is an adverb of time because it specifies when an action will happen."
     },
     {
         question: "3. What is the formula for using an adverb of place?",
@@ -34,6 +37,7 @@ function Quis8() {
             'D. Subject + Verb-ing + Adverb of Place'
         ],
         correctAnswer: 'A',
+        explanation: "The typical sentence structure is Subject + Verb + Adverb of Place, as in 'She is working here.'"
     },
     {
         question: "4. Which sentence correctly uses an adverb of place?",
@@ -44,6 +48,7 @@ function Quis8() {
             'D. He completed the project carefully.'
         ],
         correctAnswer: 'A',
+        explanation: "'On the table' is an adverbial phrase indicating the place where the action happened."
     },
     {
         question: "5. Which type of adverb answers the question 'How?'?",
@@ -54,11 +59,13 @@ function Quis8() {
             'D. Adverb of Frequency'
         ],
         correctAnswer: 'C',
+        explanation: "An adverb of manner describes how an action is performed, e.g., 'She sang beautifully.'"
     },
     {
         question: "6. Identify the adverb in the sentence: 'The children are playing in the garden.'",
         options: ['A. The children', 'B. Playing', 'C. In the garden', 'D. Are'],
         correctAnswer: 'C',
+        explanation: "'In the garden' is an adverbial phrase that tells where the action is taking place."
     },
     {
         question: "7. Which sentence contains an adverb of manner?",
@@ -69,6 +76,7 @@ function Quis8() {
             'D. I will visit you tomorrow.'
         ],
         correctAnswer: 'A',
+        explanation: "'Beautifully' is an adverb of manner because it describes how the action was performed."
     },
     {
         question: "8. Where can an adverb of time be placed in a sentence?",
@@ -79,11 +87,13 @@ function Quis8() {
             'D. Only in the middle'
         ],
         correctAnswer: 'C',
+        explanation: "Adverbs of time can appear at the beginning ('Tomorrow, I will go'), middle ('I am always late'), or end ('I will go tomorrow')."
     },
     {
         question: "9. What is the adverb of manner in the sentence: 'He completed the project carefully'?",
         options: ['A. Completed', 'B. Carefully', 'C. Project', 'D. He'],
         correctAnswer: 'B',
+        explanation: "'Carefully' is an adverb of manner describing how the project was completed."
     },
     {
         question: "10. Which sentence demonstrates the correct use of an adverb of time?",
@@ -94,82 +104,99 @@ function Quis8() {
             'D. She left her bag on the table.'
         ],
         correctAnswer: 'C',
+        explanation: "'Yesterday' is an adverb of time, indicating when the action of calling occurred."
     },
 ];
 
 
-  const currentQuestion = questions[currentQuestionIndex];
 
-  const handleAnswerClick = (answer) => {
-    setSelectedAnswer(answer);
-  };
+const currentQuestion = questions[currentQuestionIndex];
 
-  const nextQuestion = () => {
-    if (selectedAnswer === currentQuestion.correctAnswer) {
-      setCorrectAnswersCount(correctAnswersCount + 1); // Tambahkan skor jika benar
-    }
+const handleAnswerClick = (answer) => {
+  setSelectedAnswer(answer);
+};
 
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedAnswer(null);
-    } else {
-      setQuizFinished(true); // Tandai kuis selesai setelah soal terakhir
-    }
-  };
+const handleNext = () => {
+  if (selectedAnswer === currentQuestion.correctAnswer) {
+    setCorrectAnswersCount(correctAnswersCount + 1);
+  }
+  setShowExplanation(true);
+};
 
-  const restartQuiz = () => {
-    setCurrentQuestionIndex(0);
+const handleNextQuestion = () => {
+  if (currentQuestionIndex < questions.length - 1) {
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
     setSelectedAnswer(null);
-    setCorrectAnswersCount(0);
-    setQuizFinished(false);
-  };
+    setShowExplanation(false);
+  } else {
+    setQuizFinished(true);
+  }
+};
 
-  const goBackToQuestions = () => {
-    navigate('/questions'); // Navigasi ke halaman Questions
-  };
+const restartQuiz = () => {
+  setCurrentQuestionIndex(0);
+  setSelectedAnswer(null);
+  setCorrectAnswersCount(0);
+  setShowExplanation(false);
+  setQuizFinished(false);
+};
 
-  return (
-    <section id="questions" className="section questions">
-      <h2 className="section-title">Soal Latihan</h2>
-      {!quizFinished ? (
-        <div className="question-card">
-          <p className="question-text">{currentQuestion.question}</p>
-          <ul className="options-list">
-            {currentQuestion.options.map((option, index) => (
-              <li
-                key={index}
-                onClick={() => handleAnswerClick(option[0])} // Ambil huruf pertama sebagai jawaban
-                className={`option ${selectedAnswer === option[0] ? 'selected' : ''}`}
-              >
-                {option}
-              </li>
-            ))}
-          </ul>
+const goBackToQuestions = () => {
+  navigate('/questions');
+};
+
+return (
+  <section id="questions" className="section questions">
+    <h2 className="section-title">Soal Latihan</h2>
+    {!quizFinished ? (
+      <div className="question-card">
+        <p className="question-text">{currentQuestion.question}</p>
+        <ul className="options-list">
+          {currentQuestion.options.map((option, index) => (
+            <li
+              key={index}
+              onClick={() => handleAnswerClick(option[0])}
+              className={`option ${selectedAnswer === option[0] ? 'selected' : ''}`}
+            >
+              {option}
+            </li>
+          ))}
+        </ul>
+
+        {!showExplanation ? (
           <button
             className="btn next-question"
-            onClick={nextQuestion}
-            disabled={!selectedAnswer} // Nonaktifkan tombol jika belum ada jawaban
+            onClick={handleNext}
+            disabled={!selectedAnswer}
           >
-            {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'Finish Quiz'}
+            Submit Answer
           </button>
-        </div>
-      ) : (
-        <div className="result-card">
-          <h3>Quiz Finished!</h3>
-          <p>
-            You answered <span className="score">{correctAnswersCount}</span> out of{' '}
-            <span className="total-questions">{questions.length}</span> questions correctly!
-          </p>
-          <button className="btn restart-quiz" onClick={restartQuiz}>
-            Restart Quiz
-          </button>
-          <button className="btn back-to-questions" onClick={goBackToQuestions}>
-            Back to Soal Latihan
-          </button>
-        </div>
-      )}
-    </section>
-  );
+        ) : (
+          <div className="explanation">
+            <p><strong>Explanation:</strong> {currentQuestion.explanation}</p>
+            <button className="btn next-question" onClick={handleNextQuestion}>
+              {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'Finish Quiz'}
+            </button>
+          </div>
+        )}
+      </div>
+    ) : (
+      <div className="result-card">
+        <h3>Quiz Finished!</h3>
+        <p>
+          You answered <span className="score">{correctAnswersCount}</span> out of{' '}
+          <span className="total-questions">{questions.length}</span> questions correctly!
+        </p>
+        <button className="btn restart-quiz" onClick={restartQuiz}>
+          Restart Quiz
+        </button>
+        <button className="btn back-to-questions" onClick={goBackToQuestions}>
+          Back to Soal Latihan
+        </button>
+      </div>
+    )}
+  </section>
+);
 }
 
 export default Quis8;

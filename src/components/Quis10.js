@@ -6,6 +6,7 @@ function Quis10() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
+  const [showExplanation, setShowExplanation] = useState(false);
   const [quizFinished, setQuizFinished] = useState(false);
 
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ function Quis10() {
             'D. To show emotion'
         ],
         correctAnswer: 'B',
+        explanation: "A comma is used to separate items in a list, connect clauses, or clarify meaning in a sentence."
     },
     {
         question: "2. Which sentence uses a comma correctly?",
@@ -29,6 +31,7 @@ function Quis10() {
             'D. They are going to the park tomorrow,'
         ],
         correctAnswer: 'B',
+        explanation: "Commas separate items in a list. 'I bought apples, bananas, and oranges.' uses the comma correctly."
     },
     {
         question: "3. What punctuation mark is used to end a declarative sentence?",
@@ -39,6 +42,7 @@ function Quis10() {
             'D. Period'
         ],
         correctAnswer: 'D',
+        explanation: "A declarative sentence ends with a period, indicating a statement."
     },
     {
         question: "4. Which sentence uses a period correctly?",
@@ -49,6 +53,7 @@ function Quis10() {
             'D. Wow, that’s amazing!'
         ],
         correctAnswer: 'A',
+        explanation: "A period is used to end a declarative sentence, such as 'She is studying for the exam.'"
     },
     {
         question: "5. What is the function of a question mark?",
@@ -59,6 +64,7 @@ function Quis10() {
             'D. To indicate a question'
         ],
         correctAnswer: 'D',
+        explanation: "A question mark is used to end interrogative sentences, signaling a question."
     },
     {
         question: "6. Which of the following is a correct use of a question mark?",
@@ -69,6 +75,7 @@ function Quis10() {
             'D. He is coming to the party, right?'
         ],
         correctAnswer: 'B',
+        explanation: "'How are you?' is a proper interrogative sentence ending with a question mark."
     },
     {
         question: "7. What is the function of an exclamation mark?",
@@ -79,6 +86,7 @@ function Quis10() {
             'D. To make a statement'
         ],
         correctAnswer: 'B',
+        explanation: "An exclamation mark shows strong emotion, excitement, or emphasis, often used in commands."
     },
     {
         question: "8. Which sentence uses an exclamation mark correctly?",
@@ -89,6 +97,7 @@ function Quis10() {
             'D. I will go to the store.'
         ],
         correctAnswer: 'A',
+        explanation: "'She is studying hard!' uses an exclamation mark to convey emphasis or excitement."
     },
     {
         question: "9. Which of the following sentences should end with a period?",
@@ -99,6 +108,7 @@ function Quis10() {
             'D. Wow, that’s incredible!'
         ],
         correctAnswer: 'C',
+        explanation: "'I went to the store.' is a declarative sentence and ends with a period."
     },
     {
         question: "10. Which punctuation mark is used to separate items in a list?",
@@ -109,81 +119,98 @@ function Quis10() {
             'D. Period'
         ],
         correctAnswer: 'C',
+        explanation: "Commas are used to separate items in a list, ensuring clarity and readability."
     },
 ];
 
-  const currentQuestion = questions[currentQuestionIndex];
 
-  const handleAnswerClick = (answer) => {
-    setSelectedAnswer(answer);
-  };
+const currentQuestion = questions[currentQuestionIndex];
 
-  const nextQuestion = () => {
-    if (selectedAnswer === currentQuestion.correctAnswer) {
-      setCorrectAnswersCount(correctAnswersCount + 1); // Tambahkan skor jika benar
-    }
+const handleAnswerClick = (answer) => {
+  setSelectedAnswer(answer);
+};
 
-    if (currentQuestionIndex < questions.length - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
-      setSelectedAnswer(null);
-    } else {
-      setQuizFinished(true); // Tandai kuis selesai setelah soal terakhir
-    }
-  };
+const handleNext = () => {
+  if (selectedAnswer === currentQuestion.correctAnswer) {
+    setCorrectAnswersCount(correctAnswersCount + 1);
+  }
+  setShowExplanation(true);
+};
 
-  const restartQuiz = () => {
-    setCurrentQuestionIndex(0);
+const handleNextQuestion = () => {
+  if (currentQuestionIndex < questions.length - 1) {
+    setCurrentQuestionIndex(currentQuestionIndex + 1);
     setSelectedAnswer(null);
-    setCorrectAnswersCount(0);
-    setQuizFinished(false);
-  };
+    setShowExplanation(false);
+  } else {
+    setQuizFinished(true);
+  }
+};
 
-  const goBackToQuestions = () => {
-    navigate('/questions'); // Navigasi ke halaman Questions
-  };
+const restartQuiz = () => {
+  setCurrentQuestionIndex(0);
+  setSelectedAnswer(null);
+  setCorrectAnswersCount(0);
+  setShowExplanation(false);
+  setQuizFinished(false);
+};
 
-  return (
-    <section id="questions" className="section questions">
-      <h2 className="section-title">Soal Latihan</h2>
-      {!quizFinished ? (
-        <div className="question-card">
-          <p className="question-text">{currentQuestion.question}</p>
-          <ul className="options-list">
-            {currentQuestion.options.map((option, index) => (
-              <li
-                key={index}
-                onClick={() => handleAnswerClick(option[0])} // Ambil huruf pertama sebagai jawaban
-                className={`option ${selectedAnswer === option[0] ? 'selected' : ''}`}
-              >
-                {option}
-              </li>
-            ))}
-          </ul>
+const goBackToQuestions = () => {
+  navigate('/questions');
+};
+
+return (
+  <section id="questions" className="section questions">
+    <h2 className="section-title">Soal Latihan</h2>
+    {!quizFinished ? (
+      <div className="question-card">
+        <p className="question-text">{currentQuestion.question}</p>
+        <ul className="options-list">
+          {currentQuestion.options.map((option, index) => (
+            <li
+              key={index}
+              onClick={() => handleAnswerClick(option[0])}
+              className={`option ${selectedAnswer === option[0] ? 'selected' : ''}`}
+            >
+              {option}
+            </li>
+          ))}
+        </ul>
+
+        {!showExplanation ? (
           <button
             className="btn next-question"
-            onClick={nextQuestion}
-            disabled={!selectedAnswer} // Nonaktifkan tombol jika belum ada jawaban
+            onClick={handleNext}
+            disabled={!selectedAnswer}
           >
-            {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'Finish Quiz'}
+            Submit Answer
           </button>
-        </div>
-      ) : (
-        <div className="result-card">
-          <h3>Quiz Finished!</h3>
-          <p>
-            You answered <span className="score">{correctAnswersCount}</span> out of{' '}
-            <span className="total-questions">{questions.length}</span> questions correctly!
-          </p>
-          <button className="btn restart-quiz" onClick={restartQuiz}>
-            Restart Quiz
-          </button>
-          <button className="btn back-to-questions" onClick={goBackToQuestions}>
-            Back to Soal Latihan
-          </button>
-        </div>
-      )}
-    </section>
-  );
+        ) : (
+          <div className="explanation">
+            <p><strong>Explanation:</strong> {currentQuestion.explanation}</p>
+            <button className="btn next-question" onClick={handleNextQuestion}>
+              {currentQuestionIndex < questions.length - 1 ? 'Next Question' : 'Finish Quiz'}
+            </button>
+          </div>
+        )}
+      </div>
+    ) : (
+      <div className="result-card">
+        <h3>Quiz Finished!</h3>
+        <p>
+          You answered <span className="score">{correctAnswersCount}</span> out of{' '}
+          <span className="total-questions">{questions.length}</span> questions correctly!
+        </p>
+        <button className="btn restart-quiz" onClick={restartQuiz}>
+          Restart Quiz
+        </button>
+        <button className="btn back-to-questions" onClick={goBackToQuestions}>
+          Back to Soal Latihan
+        </button>
+      </div>
+    )}
+  </section>
+);
 }
 
 export default Quis10;
