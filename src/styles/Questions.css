@@ -9,6 +9,13 @@ body {
   padding: 20px;
 }
 
+.quiz-container p {
+  text-align: center;
+  font-size: 1.2em;
+  color: rgb(240, 238, 238);
+  margin-bottom: 30px;
+}
+
 .semester-section {
   margin-bottom: 40px;
 }
