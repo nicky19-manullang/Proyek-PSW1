@@ -9,7 +9,7 @@
 .header-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
+  text-align: 14px;
   gap: 40px;
   background: linear-gradient(120deg, #89bbec, #63b3ed);
   color: #fff;
@@ -38,12 +38,14 @@
   margin-bottom: 15px;
   color: #fff;
   opacity: 0.9;
+  text-align: left; /* Added to align text left */
 }
 
 .tagline {
   font-style: italic;
   margin-bottom: 20px;
   color: #f0f0f0;
+  text-align: left; /* Added to align text left */
 }
 
 .logo-container .logo {
