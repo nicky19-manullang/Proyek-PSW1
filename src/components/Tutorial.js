@@ -15,17 +15,17 @@ function VideoTutorial() {
     },
     {
       name: "Materi Classification of Sentence Bahasa Inggris SMA Kelas 11 Semester 1",
-      video: "https://www.youtube.com/embed/ghi789",
+      video: "https://www.youtube.com/embed/zZslAVsBBGE?si=7cUYFflSyYt2aNXa" ,
       icon: "/images/classificatioin.png",
     },
     {
       name: "Materi Type of Clauses Bahasa Inggris SMA Kelas 11 Semester 1",
-      video: "https://www.youtube.com/embed/jkl012",
+      video: "https://www.youtube.com/embed/Iv0jZvY1NUQ?si=oUKJ_ZeFyVCM2ZRv" ,
       icon: "/images/Typesofclauses.webp",
     },
     {
       name: "Materi Sentence Connectors Bahasa Inggris SMA Kelas 11 Semester 1",
-      video: "https://www.youtube.com/embed/mno345",
+      video: "https://www.youtube.com/embed/e2CcNUUGZeA?si=4vIAI6jvB55susJE",
       icon: "/images/sentenceconectors.jpg",
     },
   ];
@@ -33,27 +33,27 @@ function VideoTutorial() {
   const semesterTwoVideos = [
     {
       name: "Materi Tenses Bahasa Inggris SMA Kelas 11 Semester 2",
-      video: "https://www.youtube.com/embed/pqr678",
+      video: "https://www.youtube.com/embed/ht8DX1iDdTA?si=LFJV8PbO1mfe5Skc",
       icon: "/images/tense.jpg",
     },
     {
       name: "Materi Penggunaan Bahasa Inggris Modals SMA Kelas 11 Semester 2",
-      video: "https://www.youtube.com/embed/stu901",
+      video: "https://www.youtube.com/embed/2kOBaf9VmVE?si=-Nr4YhTh62aif4By" ,
       icon: "/images/modals verbs.jpg",
     },
     {
       name: "Materi Keterangan (Adverbs) Bahasa Inggris SMA Kelas 11 Semester 2",
-      video: "https://www.youtube.com/embed/vwx234",
+      video: "https://www.youtube.com/embed/9PgFbTK2jUI?si=Ur5PBwBolfvzFinJ",
       icon: "/images/Adverb.jpg",
     },
     {
       name: "Materi Frasa (Phrases) Bahasa Inggris SMA Kelas 11 Semester 2",
-      video: "https://www.youtube.com/embed/yzb567",
+      video: "https://www.youtube.com/embed/3HPDFtZQ9ao?si=HYOajNBcttr9xga3",
       icon: "/images/Phrases.jpg",
     },
     {
       name: "Materi Punctuation Bahasa Inggris SMA Kelas 11 Semester 2",
-      video: "https://www.youtube.com/embed/abc890",
+      video: "https://www.youtube.com/embed/6sE57uaTKuQ?si=HiLUaShyHVVaq08T" ,
       icon: "/images/Punctuation.jpg",
     },
   ];
