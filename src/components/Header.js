@@ -26,11 +26,11 @@ function Header() {
       <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
         <ul>
           <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
-          <li><Link to="/vocabulary" onClick={toggleMenu}>Vocabulary</Link></li>
           <li><Link to="/materi" onClick={toggleMenu}>Materi</Link></li>
           <li><Link to="/questions" onClick={toggleMenu}>Soal Latihan</Link></li>
-          <li><Link to="/downloads" onClick={toggleMenu}>Unduh Materi</Link></li>
+          <li><Link to="/vocabulary" onClick={toggleMenu}>Vocabulary</Link></li>
           <li><Link to="/tutorial" onClick={toggleMenu}>Tutorial by video</Link></li>
+          <li><Link to="/downloads" onClick={toggleMenu}>Unduh Materi</Link></li>
           <li><Link to="/tipstrik" onClick={toggleMenu}>Tips & Trik</Link></li>
         </ul>
       </nav>
