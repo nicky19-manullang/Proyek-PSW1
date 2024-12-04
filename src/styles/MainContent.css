@@ -164,7 +164,7 @@
   transform: scale(1.05);
 }
 
-/* Responsiveness */
+/* Responsiv */
 @media (max-width: 1024px) {
   .header-section {
     grid-template-columns: 1fr;
