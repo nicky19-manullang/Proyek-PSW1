@@ -27,6 +27,10 @@ body {
 }
 
 .topic-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   background: #fff;
   border: 2px solid #dcdcdc;
   border-radius: 12px;
@@ -42,8 +46,8 @@ body {
 }
 
 .topic-image {
-  width: 181px;
-  height: 116px;
+  width: 100%;
+  height: 180px; /* Tinggi tetap untuk proporsi gambar */
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -53,6 +57,7 @@ body {
   font-size: 18px;
   color: #4b0082;
   margin-bottom: 10px;
+  flex-grow: 1;
 }
 
 .topic-button {
@@ -63,8 +68,37 @@ body {
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 10px;
 }
 
 .topic-button:hover {
   background-color: #663399;
+}
+
+@media (max-width: 768px) {
+  .semester-section h2 {
+    font-size: 24px;
+  }
+
+  .topic-card {
+    padding: 10px;
+  }
+
+  .topic-title {
+    font-size: 16px;
+  }
+
+  .topic-button {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .topic-image {
+    height: 150px; 
+  }
+
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
 }
