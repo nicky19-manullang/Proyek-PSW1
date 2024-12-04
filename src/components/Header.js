@@ -11,20 +11,18 @@ function Header() {
 
   return (
     <header className="header">
-      {/* Logo Section */}
+
       <div className="logo-container">
         <img src="/images/hero.png" alt="JOUEnglish Logo" className="hero" />
         <h1>JOUEnglish</h1>
       </div>
 
-      {/* Hamburger Button */}
       <div className="hamburger" onClick={toggleMenu}>
         <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
         <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
         <div className={`bar ${isMenuOpen ? 'open' : ''}`}></div>
       </div>
 
-      {/* Navigation Menu */}
       <nav className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
         <ul>
           <li><Link to="/" onClick={toggleMenu}>Home</Link></li>

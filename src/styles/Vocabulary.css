@@ -155,7 +155,6 @@ button.delete-button:hover {
   margin-left: 10px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .search-bar {
     width: 80%;

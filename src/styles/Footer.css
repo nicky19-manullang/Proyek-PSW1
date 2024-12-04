@@ -1,4 +1,3 @@
-/* Footer Styling */
 footer {
   background-color: #0a3362;
   color: white;
@@ -72,7 +71,6 @@ footer .footer-bottom p {
   color: #b0c4de;
 }
 
-/* Social Media Links */
 footer .social-media-links {
   display: flex;
   justify-content: center;
@@ -107,7 +105,6 @@ footer .social-logo img {
   border-radius: 50%;
 }
 
-/* Responsif */
 @media (max-width: 768px) {
   footer .footer-links {
     flex-direction: column;

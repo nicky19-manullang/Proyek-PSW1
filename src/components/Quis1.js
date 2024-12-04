@@ -6,7 +6,7 @@ function Quis1() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [correctAnswersCount, setCorrectAnswersCount] = useState(0);
-  const [showExplanation, setShowExplanation] = useState(false); // Untuk menampilkan pembahasan
+  const [showExplanation, setShowExplanation] = useState(false);
   const [quizFinished, setQuizFinished] = useState(false);
 
   const navigate = useNavigate();

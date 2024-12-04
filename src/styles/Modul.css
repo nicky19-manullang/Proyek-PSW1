@@ -140,7 +140,6 @@
   margin-top: 20px;
 }
 
-/* Responsif */
 @media (max-width: 768px) {
   .modul-page {
     padding: 15px;
