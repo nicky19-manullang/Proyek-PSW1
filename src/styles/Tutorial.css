@@ -1,119 +1,104 @@
-/* Tutorial.css */
-
+/* Global Styles */
 body {
-  font-family: 'Poppins', 'Arial', sans-serif;
-  background-color: #f3f7fb;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f0f8ff;
+  color: #333;
 }
 
 .tutorial-page {
-  padding: 30px 15px;
+  padding: 20px;
+}
+
+h2 {
   text-align: center;
+  color: #6a5acd;
+  font-size: 2.5em;
+  margin-bottom: 10px;
 }
 
-.tutorial-page h2 {
-  font-size: 2.8rem;
-  color: #2c98f0;
-  margin-bottom: 15px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+p {
+  text-align: center;
+  font-size: 1.2em;
+  color: #4682b4;
+  margin-bottom: 30px;
 }
 
-.tutorial-page p {
-  font-size: 1.2rem;
-  color: #5a5a5a;
-  margin-bottom: 25px;
+/* Semester Section Styles */
+.semester-section {
+  margin-bottom: 40px;
 }
 
+h3 {
+  color: #ff69b4;
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Tutorial Container Styles */
 .tutorial-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 25px;
+  gap: 20px;
 }
 
 .tutorial-card {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 20px;
-  width: 320px;
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  border: 2px solid #ff69b4;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  width: 300px;
 }
 
 .tutorial-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .tutorial-image {
   width: 100%;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  height: 200px;
+  object-fit: cover;
 }
 
 .tutorial-content {
-  padding: 20px;
-  text-align: left;
+  padding: 15px;
+  text-align: center;
 }
 
 .tutorial-content h4 {
-  font-size: 1.6rem;
-  color: #2c98f0;
-  margin-bottom: 12px;
+  font-size: 1.2em;
+  color: #6a5acd;
+  margin-bottom: 10px;
 }
 
-.tutorial-content ul {
-  list-style-type: circle;
-  padding-left: 20px;
-  margin: 0 0 15px;
-  color: #777;
-}
-
-.tutorial-content li {
-  margin-bottom: 8px;
-  font-size: 1rem;
-}
-
-.tutorial-button {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  background-color: #2c98f0;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-align: center;
+iframe {
   border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.tutorial-button:hover {
-  background-color: #2368a0;
+  border-radius: 10px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .tutorial-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .tutorial-card {
     width: 90%;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1200px) {
-  .tutorial-card {
-    width: 45%;
+@media (max-width: 480px) {
+  h2 {
+    font-size: 2em;
   }
-}
 
-@media (min-width: 1201px) {
-  .tutorial-card {
-    width: 30%;
+  p {
+    font-size: 1em;
+  }
+
+  h3 {
+    font-size: 1.5em;
   }
 }
