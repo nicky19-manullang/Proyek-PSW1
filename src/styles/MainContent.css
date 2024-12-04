@@ -25,6 +25,7 @@
   color: #2d3931;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   transition: color 0.3s ease, text-shadow 0.3s ease;
+  text-align: left;
 }
 
 .text-section h1:hover {
@@ -38,14 +39,14 @@
   margin-bottom: 15px;
   color: #fff;
   opacity: 0.9;
-  text-align: left; /* Added to align text left */
+  text-align: left; 
 }
 
 .tagline {
   font-style: italic;
   margin-bottom: 20px;
   color: #f0f0f0;
-  text-align: left; /* Added to align text left */
+  text-align: left; 
 }
 
 .logo-container .logo {

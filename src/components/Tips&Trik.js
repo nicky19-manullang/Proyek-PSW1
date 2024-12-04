@@ -60,7 +60,7 @@ const TipsTrik= () => {
       ))}
       <footer>
         <p>
-          Join EF's Free Demo Class for guided lessons with professional teachers! 🚀
+          Join JOUEnglish Free Demo Class for guided lessons with professional teachers! 🚀
         </p>
       </footer>
     </div>
